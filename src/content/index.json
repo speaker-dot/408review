@@ -1,0 +1,3576 @@
+{
+  "nodes": [
+    {
+      "id": "DS",
+      "name": "数据结构",
+      "symbolSize": 68
+    },
+    {
+      "id": "CS",
+      "name": "计算机组成原理",
+      "symbolSize": 68
+    },
+    {
+      "id": "OS",
+      "name": "操作系统",
+      "symbolSize": 68
+    },
+    {
+      "id": "NET",
+      "name": "计算机网络",
+      "symbolSize": 68
+    },
+    {
+      "id": "DS-01",
+      "name": "绪论",
+      "parentId": "DS",
+      "symbolSize": 54
+    },
+    {
+      "id": "DS-01-01",
+      "name": "数据结构的基本概念",
+      "parentId": "DS-01",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-01-01-001",
+      "name": "数据、数据元素、数据项",
+      "parentId": "DS-01-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-01-01-002",
+      "name": "数据结构三要素：逻辑结构、存储结构、运算",
+      "parentId": "DS-01-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-01-02",
+      "name": "算法基本概念",
+      "parentId": "DS-01",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-01-02-001",
+      "name": "算法的五个特性",
+      "parentId": "DS-01-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-01-02-002",
+      "name": "时间复杂度与空间复杂度计算",
+      "parentId": "DS-01-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-01-02-003",
+      "name": "渐进符号（O、Ω、Θ）",
+      "parentId": "DS-01-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-02",
+      "name": "线性表",
+      "parentId": "DS",
+      "symbolSize": 54
+    },
+    {
+      "id": "DS-02-01",
+      "name": "线性表的定义与基本操作",
+      "parentId": "DS-02",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-02-01-001",
+      "name": "线性表的逻辑特性",
+      "parentId": "DS-02-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-02-02",
+      "name": "顺序表",
+      "parentId": "DS-02",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-02-02-001",
+      "name": "顺序表的定义与实现",
+      "parentId": "DS-02-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-02-02-002",
+      "name": "插入与删除操作（移动元素次数计算）",
+      "parentId": "DS-02-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-02-03",
+      "name": "链表",
+      "parentId": "DS-02",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-02-03-001",
+      "name": "单链表的定义与实现",
+      "parentId": "DS-02-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-02-03-002",
+      "name": "双链表与循环链表",
+      "parentId": "DS-02-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-02-03-003",
+      "name": "静态链表",
+      "parentId": "DS-02-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-02-03-004",
+      "name": "顺序表与链表的对比",
+      "parentId": "DS-02-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-03",
+      "name": "栈和队列",
+      "parentId": "DS",
+      "symbolSize": 54
+    },
+    {
+      "id": "DS-03-01",
+      "name": "栈",
+      "parentId": "DS-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-03-01-001",
+      "name": "栈的定义与基本操作",
+      "parentId": "DS-03-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-03-01-002",
+      "name": "顺序栈与链栈",
+      "parentId": "DS-03-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-03-01-003",
+      "name": "栈的应用：括号匹配、表达式求值",
+      "parentId": "DS-03-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-03-02",
+      "name": "队列",
+      "parentId": "DS-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-03-02-001",
+      "name": "队列的定义与基本操作",
+      "parentId": "DS-03-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-03-02-002",
+      "name": "循环队列（判空判满条件）",
+      "parentId": "DS-03-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-03-02-003",
+      "name": "链式队列",
+      "parentId": "DS-03-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-03-03",
+      "name": "特殊矩阵的压缩存储",
+      "parentId": "DS-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-03-03-001",
+      "name": "对称矩阵、三角矩阵、对角矩阵",
+      "parentId": "DS-03-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-03-03-002",
+      "name": "稀疏矩阵的三元组与十字链表",
+      "parentId": "DS-03-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-04",
+      "name": "串",
+      "parentId": "DS",
+      "symbolSize": 54
+    },
+    {
+      "id": "DS-04-01",
+      "name": "串的定义与模式匹配",
+      "parentId": "DS-04",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-04-01-001",
+      "name": "朴素模式匹配算法",
+      "parentId": "DS-04-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-04-01-002",
+      "name": "KMP 算法（Next 数组与 Nextval 数组计算）",
+      "parentId": "DS-04-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-05",
+      "name": "树与二叉树",
+      "parentId": "DS",
+      "symbolSize": 54
+    },
+    {
+      "id": "DS-05-01",
+      "name": "树的基本概念",
+      "parentId": "DS-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-05-01-001",
+      "name": "结点数与度数的关系",
+      "parentId": "DS-05-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-05-02",
+      "name": "二叉树",
+      "parentId": "DS-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-05-02-001",
+      "name": "二叉树的定义与性质",
+      "parentId": "DS-05-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-05-02-002",
+      "name": "满二叉树与完全二叉树",
+      "parentId": "DS-05-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-05-03",
+      "name": "二叉树的遍历",
+      "parentId": "DS-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-05-03-001",
+      "name": "先序、中序、后序遍历（递归与非递归）",
+      "parentId": "DS-05-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-05-03-002",
+      "name": "层次遍历",
+      "parentId": "DS-05-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-05-03-003",
+      "name": "由遍历序列重建二叉树",
+      "parentId": "DS-05-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-05-04",
+      "name": "线索二叉树",
+      "parentId": "DS-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-05-04-001",
+      "name": "线索化的概念与前中后序线索树",
+      "parentId": "DS-05-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-05-05",
+      "name": "树与森林",
+      "parentId": "DS-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-05-05-001",
+      "name": "树的存储结构（双亲、孩子、孩子兄弟表示法）",
+      "parentId": "DS-05-05",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-05-05-002",
+      "name": "森林与二叉树的转换",
+      "parentId": "DS-05-05",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-05-05-003",
+      "name": "树与森林的遍历",
+      "parentId": "DS-05-05",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-05-06",
+      "name": "哈夫曼树",
+      "parentId": "DS-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-05-06-001",
+      "name": "带权路径长度 WPL 计算",
+      "parentId": "DS-05-06",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-05-06-002",
+      "name": "哈夫曼编码",
+      "parentId": "DS-05-06",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-06",
+      "name": "图",
+      "parentId": "DS",
+      "symbolSize": 54
+    },
+    {
+      "id": "DS-06-01",
+      "name": "图的基本概念",
+      "parentId": "DS-06",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-06-01-001",
+      "name": "有向图、无向图、连通分量、强连通分量",
+      "parentId": "DS-06-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-06-01-002",
+      "name": "度、入度、出度的计算",
+      "parentId": "DS-06-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-06-02",
+      "name": "图的存储",
+      "parentId": "DS-06",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-06-02-001",
+      "name": "邻接矩阵（适合稠密图）",
+      "parentId": "DS-06-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-06-02-002",
+      "name": "邻接表（适合稀疏图）",
+      "parentId": "DS-06-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-06-02-003",
+      "name": "十字链表与邻接多重表",
+      "parentId": "DS-06-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-06-03",
+      "name": "图的遍历",
+      "parentId": "DS-06",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-06-03-001",
+      "name": "深度优先搜索 DFS",
+      "parentId": "DS-06-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-06-03-002",
+      "name": "广度优先搜索 BFS",
+      "parentId": "DS-06-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-06-03-003",
+      "name": "DFS 与 BFS 的生成树",
+      "parentId": "DS-06-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-06-04",
+      "name": "最小生成树",
+      "parentId": "DS-06",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-06-04-001",
+      "name": "Prim 算法（加点法）",
+      "parentId": "DS-06-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-06-04-002",
+      "name": "Kruskal 算法（加边法）",
+      "parentId": "DS-06-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-06-05",
+      "name": "最短路径",
+      "parentId": "DS-06",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-06-05-001",
+      "name": "Dijkstra 算法（单源、边权非负）",
+      "parentId": "DS-06-05",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-06-05-002",
+      "name": "Floyd 算法（多源）",
+      "parentId": "DS-06-05",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-06-06",
+      "name": "拓扑排序与关键路径",
+      "parentId": "DS-06",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-06-06-001",
+      "name": "AOV 网与拓扑排序算法",
+      "parentId": "DS-06-06",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-06-06-002",
+      "name": "AOE 网与关键路径算法",
+      "parentId": "DS-06-06",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-07",
+      "name": "查找",
+      "parentId": "DS",
+      "symbolSize": 54
+    },
+    {
+      "id": "DS-07-01",
+      "name": "查找的基本概念",
+      "parentId": "DS-07",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-07-01-001",
+      "name": "ASL（平均查找长度）的计算",
+      "parentId": "DS-07-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-07-02",
+      "name": "线性结构查找",
+      "parentId": "DS-07",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-07-02-001",
+      "name": "顺序查找（哨兵设置）",
+      "parentId": "DS-07-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-07-02-002",
+      "name": "折半查找（判定树构造）",
+      "parentId": "DS-07-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-07-02-003",
+      "name": "分块查找",
+      "parentId": "DS-07-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-07-03",
+      "name": "树形结构查找",
+      "parentId": "DS-07",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-07-03-001",
+      "name": "二叉排序树 BST（插入、删除、查找）",
+      "parentId": "DS-07-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-07-03-002",
+      "name": "平衡二叉树 AVL（平衡因子、旋转调整 LL/RR/LR/RL）",
+      "parentId": "DS-07-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-07-03-003",
+      "name": "B 树与 B+ 树（阶、插入、删除、对比）",
+      "parentId": "DS-07-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-07-04",
+      "name": "哈希表",
+      "parentId": "DS-07",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-07-04-001",
+      "name": "哈希函数的构造（除留余数法）",
+      "parentId": "DS-07-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-07-04-002",
+      "name": "冲突处理方法（开放定址法、链地址法）",
+      "parentId": "DS-07-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-07-04-003",
+      "name": "装填因子 α 与 ASL 计算",
+      "parentId": "DS-07-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-08",
+      "name": "排序",
+      "parentId": "DS",
+      "symbolSize": 54
+    },
+    {
+      "id": "DS-08-01",
+      "name": "排序的基本概念",
+      "parentId": "DS-08",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-08-01-001",
+      "name": "稳定性、内部排序与外部排序",
+      "parentId": "DS-08-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-08-02",
+      "name": "插入排序",
+      "parentId": "DS-08",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-08-02-001",
+      "name": "直接插入排序",
+      "parentId": "DS-08-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-08-02-002",
+      "name": "希尔排序",
+      "parentId": "DS-08-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-08-03",
+      "name": "交换排序",
+      "parentId": "DS-08",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-08-03-001",
+      "name": "冒泡排序",
+      "parentId": "DS-08-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-08-03-002",
+      "name": "快速排序（枢轴选取、partition 过程、递归树分析）",
+      "parentId": "DS-08-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-08-04",
+      "name": "选择排序",
+      "parentId": "DS-08",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-08-04-001",
+      "name": "简单选择排序",
+      "parentId": "DS-08-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-08-04-002",
+      "name": "堆排序（建堆、调整堆、时间复杂度分析）",
+      "parentId": "DS-08-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-08-05",
+      "name": "归并排序与基数排序",
+      "parentId": "DS-08",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-08-05-001",
+      "name": "二路归并排序（Merge 过程）",
+      "parentId": "DS-08-05",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-08-05-002",
+      "name": "基数排序（LSD/MSD）",
+      "parentId": "DS-08-05",
+      "symbolSize": 28
+    },
+    {
+      "id": "DS-08-06",
+      "name": "各种排序算法的比较",
+      "parentId": "DS-08",
+      "symbolSize": 40
+    },
+    {
+      "id": "DS-08-06-001",
+      "name": "时间复杂度、空间复杂度、稳定性对比表",
+      "parentId": "DS-08-06",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-01",
+      "name": "计算机系统概述",
+      "parentId": "CS",
+      "symbolSize": 54
+    },
+    {
+      "id": "CS-01-01",
+      "name": "计算机发展历程",
+      "parentId": "CS-01",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-01-02",
+      "name": "计算机系统层次结构",
+      "parentId": "CS-01",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-01-02-001",
+      "name": "冯·诺依曼机特点",
+      "parentId": "CS-01-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-01-02-002",
+      "name": "硬件五大部件（运算器、控制器、存储器、输入、输出）",
+      "parentId": "CS-01-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-01-03",
+      "name": "计算机性能指标",
+      "parentId": "CS-01",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-01-03-001",
+      "name": "CPI、MIPS、FLOPS",
+      "parentId": "CS-01-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-02",
+      "name": "数据的表示和运算",
+      "parentId": "CS",
+      "symbolSize": 54
+    },
+    {
+      "id": "CS-02-01",
+      "name": "数制与编码",
+      "parentId": "CS-02",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-02-01-001",
+      "name": "进位计数制及其转换",
+      "parentId": "CS-02-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-02-01-002",
+      "name": "BCD 码、字符与字符串",
+      "parentId": "CS-02-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-02-01-003",
+      "name": "校验码（奇偶校验、CRC、海明码）",
+      "parentId": "CS-02-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-02-02",
+      "name": "定点数的表示与运算",
+      "parentId": "CS-02",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-02-02-001",
+      "name": "无符号数与有符号数（原码、反码、补码、移码）",
+      "parentId": "CS-02-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-02-02-002",
+      "name": "定点数的移位运算（算术移位、逻辑移位）",
+      "parentId": "CS-02-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-02-02-003",
+      "name": "补码的加减法运算（溢出判断）",
+      "parentId": "CS-02-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-02-02-004",
+      "name": "原码/补码乘法（布斯算法）",
+      "parentId": "CS-02-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-02-02-005",
+      "name": "原码/补码除法（恢复余数法、加减交替法）",
+      "parentId": "CS-02-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-02-03",
+      "name": "浮点数的表示与运算",
+      "parentId": "CS-02",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-02-03-001",
+      "name": "IEEE 754 标准",
+      "parentId": "CS-02-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-02-03-002",
+      "name": "浮点数的加减运算步骤",
+      "parentId": "CS-02-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-02-04",
+      "name": "ALU 与运算器",
+      "parentId": "CS-02",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-02-04-001",
+      "name": "并行加法器与进位链",
+      "parentId": "CS-02-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-03",
+      "name": "存储器层次结构",
+      "parentId": "CS",
+      "symbolSize": 54
+    },
+    {
+      "id": "CS-03-01",
+      "name": "存储器分类与性能指标",
+      "parentId": "CS-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-03-01-001",
+      "name": "存取时间、存取周期、带宽",
+      "parentId": "CS-03-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-03-02",
+      "name": "主存储器",
+      "parentId": "CS-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-03-02-001",
+      "name": "SRAM 与 DRAM 的区别",
+      "parentId": "CS-03-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-03-02-002",
+      "name": "ROM、Flash Memory",
+      "parentId": "CS-03-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-03-02-003",
+      "name": "主存容量的扩展（位扩展、字扩展、字位同时扩展）",
+      "parentId": "CS-03-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-03-02-004",
+      "name": "多模块存储器（单体多字、多体交叉）",
+      "parentId": "CS-03-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-03-03",
+      "name": "Cache 存储器",
+      "parentId": "CS-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-03-03-001",
+      "name": "Cache 基本原理与映射方式（直接、全相联、组相联）",
+      "parentId": "CS-03-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-03-03-002",
+      "name": "Cache 替换算法（LRU、FIFO、随机）",
+      "parentId": "CS-03-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-03-03-003",
+      "name": "Cache 写策略（全写、写回、写分配、非写分配）",
+      "parentId": "CS-03-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-03-03-004",
+      "name": "Cache 一致性（MESI 协议）",
+      "parentId": "CS-03-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-03-04",
+      "name": "虚拟存储器",
+      "parentId": "CS-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-03-04-001",
+      "name": "页式虚拟存储（地址变换、TLB 快表）",
+      "parentId": "CS-03-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-03-04-002",
+      "name": "段式与段页式存储",
+      "parentId": "CS-03-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-04",
+      "name": "指令系统",
+      "parentId": "CS",
+      "symbolSize": 54
+    },
+    {
+      "id": "CS-04-01",
+      "name": "指令格式",
+      "parentId": "CS-04",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-04-01-001",
+      "name": "操作码与地址码",
+      "parentId": "CS-04-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-04-01-002",
+      "name": "定长与变长指令格式",
+      "parentId": "CS-04-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-04-02",
+      "name": "寻址方式",
+      "parentId": "CS-04",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-04-02-001",
+      "name": "指令寻址（顺序、跳跃）",
+      "parentId": "CS-04-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-04-02-002",
+      "name": "数据寻址（立即、直接、间接、寄存器、基址、变址、相对、堆栈）",
+      "parentId": "CS-04-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-04-03",
+      "name": "CISC 与 RISC",
+      "parentId": "CS-04",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-04-03-001",
+      "name": "CISC 与 RISC 的主要区别",
+      "parentId": "CS-04-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-05",
+      "name": "中央处理器（CPU）",
+      "parentId": "CS",
+      "symbolSize": 54
+    },
+    {
+      "id": "CS-05-01",
+      "name": "CPU 的功能与结构",
+      "parentId": "CS-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-05-01-001",
+      "name": "运算器与控制器的基本结构",
+      "parentId": "CS-05-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-05-01-002",
+      "name": "寄存器组织",
+      "parentId": "CS-05-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-05-02",
+      "name": "指令执行过程",
+      "parentId": "CS-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-05-02-001",
+      "name": "指令周期、机器周期、时钟周期的关系",
+      "parentId": "CS-05-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-05-02-002",
+      "name": "取指、间址、执行、中断周期的微操作",
+      "parentId": "CS-05-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-05-03",
+      "name": "数据通路",
+      "parentId": "CS-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-05-03-001",
+      "name": "CPU 内部单总线结构的数据传送",
+      "parentId": "CS-05-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-05-03-002",
+      "name": "专用数据通路设计",
+      "parentId": "CS-05-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-05-04",
+      "name": "硬布线控制器",
+      "parentId": "CS-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-05-04-001",
+      "name": "时序系统与控制信号的产生",
+      "parentId": "CS-05-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-05-05",
+      "name": "微程序控制器",
+      "parentId": "CS-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-05-05-001",
+      "name": "微命令、微指令、微程序的概念",
+      "parentId": "CS-05-05",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-05-05-002",
+      "name": "水平型与垂直型微指令",
+      "parentId": "CS-05-05",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-05-05-003",
+      "name": "微指令的编码方式与地址形成方式",
+      "parentId": "CS-05-05",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-05-06",
+      "name": "指令流水线",
+      "parentId": "CS-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-05-06-001",
+      "name": "流水线的性能指标（吞吐率、加速比、效率）",
+      "parentId": "CS-05-06",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-05-06-002",
+      "name": "数据相关、结构相关、控制相关的处理",
+      "parentId": "CS-05-06",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-05-06-003",
+      "name": "超标量、超流水线、超长指令字技术",
+      "parentId": "CS-05-06",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-06",
+      "name": "总线",
+      "parentId": "CS",
+      "symbolSize": 54
+    },
+    {
+      "id": "CS-06-01",
+      "name": "总线概述",
+      "parentId": "CS-06",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-06-01-001",
+      "name": "总线的分类（片内、系统、通信总线）",
+      "parentId": "CS-06-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-06-01-002",
+      "name": "总线性能指标（带宽、时钟频率）",
+      "parentId": "CS-06-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-06-02",
+      "name": "总线仲裁",
+      "parentId": "CS-06",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-06-02-001",
+      "name": "集中仲裁（链式查询、计数器定时查询、独立请求）",
+      "parentId": "CS-06-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-06-02-002",
+      "name": "分布仲裁",
+      "parentId": "CS-06-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-06-03",
+      "name": "总线操作与定时",
+      "parentId": "CS-06",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-06-03-001",
+      "name": "同步定时与异步定时",
+      "parentId": "CS-06-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-06-04",
+      "name": "总线标准",
+      "parentId": "CS-06",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-06-04-001",
+      "name": "PCI、USB、ISA、AGP 特点",
+      "parentId": "CS-06-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-07",
+      "name": "输入输出系统",
+      "parentId": "CS",
+      "symbolSize": 54
+    },
+    {
+      "id": "CS-07-01",
+      "name": "I/O 系统基本概念",
+      "parentId": "CS-07",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-07-01-001",
+      "name": "I/O 软件的层次",
+      "parentId": "CS-07-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-07-02",
+      "name": "I/O 控制方式",
+      "parentId": "CS-07",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-07-02-001",
+      "name": "程序查询方式",
+      "parentId": "CS-07-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-07-02-002",
+      "name": "程序中断方式（中断隐指令、向量中断、多重中断）",
+      "parentId": "CS-07-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-07-02-003",
+      "name": "DMA 方式（DMA 控制器的组成、传输流程）",
+      "parentId": "CS-07-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-07-03",
+      "name": "I/O 接口",
+      "parentId": "CS-07",
+      "symbolSize": 40
+    },
+    {
+      "id": "CS-07-03-001",
+      "name": "I/O 端口及其编址",
+      "parentId": "CS-07-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "CS-07-03-002",
+      "name": "并行接口与串行接口",
+      "parentId": "CS-07-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-01",
+      "name": "操作系统概述",
+      "parentId": "OS",
+      "symbolSize": 54
+    },
+    {
+      "id": "OS-01-01",
+      "name": "操作系统的特征（并发、共享、虚拟、异步）",
+      "parentId": "OS-01",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-01-02",
+      "name": "操作系统的发展与分类（批处理、分时、实时、网络、分布式）",
+      "parentId": "OS-01",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-01-03",
+      "name": "操作系统内核与体系结构（宏内核、微内核）",
+      "parentId": "OS-01",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-02",
+      "name": "进程管理",
+      "parentId": "OS",
+      "symbolSize": 54
+    },
+    {
+      "id": "OS-02-01",
+      "name": "进程与线程",
+      "parentId": "OS-02",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-02-01-001",
+      "name": "进程的概念与组成",
+      "parentId": "OS-02-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-02-01-002",
+      "name": "进程的状态与转换（三态、五态模型）",
+      "parentId": "OS-02-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-02-01-003",
+      "name": "线程的概念与实现方式（用户级、内核级）",
+      "parentId": "OS-02-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-02-01-004",
+      "name": "进程与线程的比较",
+      "parentId": "OS-02-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-02-02",
+      "name": "处理机调度",
+      "parentId": "OS-02",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-02-02-001",
+      "name": "调度的基本概念（作业调度、中级调度、进程调度）",
+      "parentId": "OS-02-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-02-02-002",
+      "name": "调度准则（CPU 利用率、吞吐量、周转时间、等待时间、响应时间）",
+      "parentId": "OS-02-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-02-02-003",
+      "name": "调度算法（FCFS、SJF、优先级、时间片轮转、多级反馈队列）",
+      "parentId": "OS-02-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-02-03",
+      "name": "进程同步",
+      "parentId": "OS-02",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-02-03-001",
+      "name": "临界区与互斥访问原则",
+      "parentId": "OS-02-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-02-03-002",
+      "name": "软件实现方法（Peterson 算法）",
+      "parentId": "OS-02-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-02-03-003",
+      "name": "硬件实现方法（中断屏蔽、TestAndSet、Swap）",
+      "parentId": "OS-02-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-02-03-004",
+      "name": "信号量机制（整型、记录型、AND 型、信号量集）",
+      "parentId": "OS-02-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-02-03-005",
+      "name": "经典同步问题（生产者-消费者、读者-写者、哲学家进餐）",
+      "parentId": "OS-02-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-02-03-006",
+      "name": "管程机制",
+      "parentId": "OS-02-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-02-04",
+      "name": "死锁",
+      "parentId": "OS-02",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-02-04-001",
+      "name": "死锁的定义与必要条件",
+      "parentId": "OS-02-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-02-04-002",
+      "name": "死锁预防（破坏四个必要条件）",
+      "parentId": "OS-02-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-02-04-003",
+      "name": "死锁避免（系统安全状态、银行家算法）",
+      "parentId": "OS-02-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-02-04-004",
+      "name": "死锁检测与解除",
+      "parentId": "OS-02-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-03",
+      "name": "内存管理",
+      "parentId": "OS",
+      "symbolSize": 54
+    },
+    {
+      "id": "OS-03-01",
+      "name": "内存管理概念",
+      "parentId": "OS-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-03-01-001",
+      "name": "逻辑地址与物理地址、重定位",
+      "parentId": "OS-03-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-03-01-002",
+      "name": "内存保护（界地址寄存器、重定位寄存器）",
+      "parentId": "OS-03-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-03-02",
+      "name": "连续分配管理方式",
+      "parentId": "OS-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-03-02-001",
+      "name": "单一连续分配",
+      "parentId": "OS-03-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-03-02-002",
+      "name": "固定分区分配",
+      "parentId": "OS-03-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-03-02-003",
+      "name": "动态分区分配（首次、最佳、最坏、邻近适应）",
+      "parentId": "OS-03-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-03-02-004",
+      "name": "紧凑技术与动态重定位",
+      "parentId": "OS-03-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-03-03",
+      "name": "非连续分配管理方式",
+      "parentId": "OS-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-03-03-001",
+      "name": "分页存储管理（页表、地址变换机构、快表 TLB）",
+      "parentId": "OS-03-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-03-03-002",
+      "name": "分段存储管理（段表、地址变换）",
+      "parentId": "OS-03-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-03-03-003",
+      "name": "段页式存储管理",
+      "parentId": "OS-03-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-03-04",
+      "name": "虚拟内存管理",
+      "parentId": "OS-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-03-04-001",
+      "name": "局部性原理",
+      "parentId": "OS-03-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-03-04-002",
+      "name": "虚拟内存的基本概念（请求分页、请求分段）",
+      "parentId": "OS-03-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-03-04-003",
+      "name": "页面置换算法（OPT、FIFO、LRU、CLOCK、改进型 CLOCK）",
+      "parentId": "OS-03-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-03-04-004",
+      "name": "页面分配策略（固定/可变分配、全局/局部置换）",
+      "parentId": "OS-03-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-03-04-005",
+      "name": "抖动与工作集",
+      "parentId": "OS-03-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-04",
+      "name": "文件管理",
+      "parentId": "OS",
+      "symbolSize": 54
+    },
+    {
+      "id": "OS-04-01",
+      "name": "文件系统基础",
+      "parentId": "OS-04",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-04-01-001",
+      "name": "文件的逻辑结构（顺序、索引、索引顺序）",
+      "parentId": "OS-04-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-04-01-002",
+      "name": "目录结构（单级、两级、树形、无环图）",
+      "parentId": "OS-04-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-04-01-003",
+      "name": "文件共享（硬链接、软链接）",
+      "parentId": "OS-04-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-04-01-004",
+      "name": "文件保护（口令、加密、访问控制）",
+      "parentId": "OS-04-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-04-02",
+      "name": "文件系统实现",
+      "parentId": "OS-04",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-04-02-001",
+      "name": "文件控制块 FCB 与索引结点",
+      "parentId": "OS-04-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-04-02-002",
+      "name": "文件的物理结构（连续、链接、索引分配）",
+      "parentId": "OS-04-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-04-02-003",
+      "name": "磁盘空闲空间管理（位示图、空闲链表、成组链接）",
+      "parentId": "OS-04-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-04-03",
+      "name": "磁盘组织与管理",
+      "parentId": "OS-04",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-04-03-001",
+      "name": "磁盘结构与调度算法（FCFS、SSTF、SCAN、C-SCAN）",
+      "parentId": "OS-04-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-04-03-002",
+      "name": "磁盘容错技术（SFT-I、SFT-II）",
+      "parentId": "OS-04-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-04-03-003",
+      "name": "RAID 技术级别（RAID 0、1、5）",
+      "parentId": "OS-04-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-05",
+      "name": "输入输出管理",
+      "parentId": "OS",
+      "symbolSize": 54
+    },
+    {
+      "id": "OS-05-01",
+      "name": "I/O 控制方式",
+      "parentId": "OS-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-05-01-001",
+      "name": "程序直接控制、中断驱动、DMA、通道控制",
+      "parentId": "OS-05-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-05-02",
+      "name": "I/O 软件层次",
+      "parentId": "OS-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-05-02-001",
+      "name": "中断处理程序、设备驱动程序、设备独立性软件、用户层软件",
+      "parentId": "OS-05-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-05-03",
+      "name": "假脱机技术（SPOOLing）",
+      "parentId": "OS-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-05-03-001",
+      "name": "输入井、输出井、预输入、缓输出",
+      "parentId": "OS-05-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "OS-05-04",
+      "name": "缓冲区管理",
+      "parentId": "OS-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "OS-05-04-001",
+      "name": "单缓冲、双缓冲、循环缓冲、缓冲池",
+      "parentId": "OS-05-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-01",
+      "name": "计算机网络体系结构",
+      "parentId": "NET",
+      "symbolSize": 54
+    },
+    {
+      "id": "NET-01-01",
+      "name": "计算机网络概述",
+      "parentId": "NET-01",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-01-01-001",
+      "name": "计算机网络的定义、组成与功能",
+      "parentId": "NET-01-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-01-01-002",
+      "name": "计算机网络的分类（WAN、MAN、LAN、PAN）",
+      "parentId": "NET-01-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-01-02",
+      "name": "计算机网络体系结构与参考模型",
+      "parentId": "NET-01",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-01-02-001",
+      "name": "OSI 七层模型各层功能",
+      "parentId": "NET-01-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-01-02-002",
+      "name": "TCP/IP 四层与五层模型各层功能",
+      "parentId": "NET-01-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-01-02-003",
+      "name": "封装与解封装、PDU、SDU、SAP",
+      "parentId": "NET-01-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-02",
+      "name": "物理层",
+      "parentId": "NET",
+      "symbolSize": 54
+    },
+    {
+      "id": "NET-02-01",
+      "name": "通信基础",
+      "parentId": "NET-02",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-02-01-001",
+      "name": "数据、信号、码元、信道的概念",
+      "parentId": "NET-02-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-02-01-002",
+      "name": "奈奎斯特定理与香农定理（极限数据传输率计算）",
+      "parentId": "NET-02-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-02-01-003",
+      "name": "编码与调制（曼彻斯特、差分曼彻斯特、4B/5B）",
+      "parentId": "NET-02-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-02-01-004",
+      "name": "电路交换、报文交换、分组交换",
+      "parentId": "NET-02-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-02-02",
+      "name": "传输介质",
+      "parentId": "NET-02",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-02-02-001",
+      "name": "双绞线、同轴电缆、光纤、无线介质",
+      "parentId": "NET-02-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-02-03",
+      "name": "物理层设备",
+      "parentId": "NET-02",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-02-03-001",
+      "name": "中继器与集线器的工作原理及冲突域/广播域",
+      "parentId": "NET-02-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03",
+      "name": "数据链路层",
+      "parentId": "NET",
+      "symbolSize": 54
+    },
+    {
+      "id": "NET-03-01",
+      "name": "数据链路层的功能",
+      "parentId": "NET-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-03-01-001",
+      "name": "封装成帧、透明传输、差错控制、流量控制",
+      "parentId": "NET-03-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-02",
+      "name": "组帧",
+      "parentId": "NET-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-03-02-001",
+      "name": "字符计数、字符填充、零比特填充、违规编码",
+      "parentId": "NET-03-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-03",
+      "name": "差错控制",
+      "parentId": "NET-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-03-03-001",
+      "name": "检错编码（奇偶校验、CRC）",
+      "parentId": "NET-03-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-03-002",
+      "name": "纠错编码（海明码）",
+      "parentId": "NET-03-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-04",
+      "name": "流量控制与可靠传输",
+      "parentId": "NET-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-03-04-001",
+      "name": "停止-等待协议",
+      "parentId": "NET-03-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-04-002",
+      "name": "滑动窗口机制",
+      "parentId": "NET-03-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-04-003",
+      "name": "GBN 协议（后退 N 帧）",
+      "parentId": "NET-03-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-04-004",
+      "name": "SR 协议（选择重传）",
+      "parentId": "NET-03-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-05",
+      "name": "介质访问控制",
+      "parentId": "NET-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-03-05-001",
+      "name": "信道划分介质访问控制（FDMA、TDMA、CDMA）",
+      "parentId": "NET-03-05",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-05-002",
+      "name": "随机访问介质访问控制（ALOHA、CSMA、CSMA/CD、CSMA/CA）",
+      "parentId": "NET-03-05",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-05-003",
+      "name": "轮询访问介质访问控制（令牌传递）",
+      "parentId": "NET-03-05",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-06",
+      "name": "局域网",
+      "parentId": "NET-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-03-06-001",
+      "name": "以太网与 IEEE 802.3",
+      "parentId": "NET-03-06",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-06-002",
+      "name": "MAC 地址与帧格式",
+      "parentId": "NET-03-06",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-06-003",
+      "name": "高速以太网（100BASE-T、吉比特以太网）",
+      "parentId": "NET-03-06",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-06-004",
+      "name": "VLAN 虚拟局域网",
+      "parentId": "NET-03-06",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-07",
+      "name": "广域网",
+      "parentId": "NET-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-03-07-001",
+      "name": "PPP 协议（帧格式、工作状态）",
+      "parentId": "NET-03-07",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-07-002",
+      "name": "HDLC 协议",
+      "parentId": "NET-03-07",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-08",
+      "name": "数据链路层设备",
+      "parentId": "NET-03",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-03-08-001",
+      "name": "网桥（透明网桥、源路由网桥）",
+      "parentId": "NET-03-08",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-03-08-002",
+      "name": "局域网交换机（自学习、冲突域、广播域）",
+      "parentId": "NET-03-08",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-04",
+      "name": "网络层",
+      "parentId": "NET",
+      "symbolSize": 54
+    },
+    {
+      "id": "NET-04-01",
+      "name": "网络层的功能",
+      "parentId": "NET-04",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-04-01-001",
+      "name": "异构网络互联、路由与转发、拥塞控制",
+      "parentId": "NET-04-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-04-02",
+      "name": "路由算法",
+      "parentId": "NET-04",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-04-02-001",
+      "name": "静态路由与动态路由",
+      "parentId": "NET-04-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-04-02-002",
+      "name": "距离向量路由算法（RIP）",
+      "parentId": "NET-04-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-04-02-003",
+      "name": "链路状态路由算法（OSPF）",
+      "parentId": "NET-04-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-04-02-004",
+      "name": "层次路由（BGP）",
+      "parentId": "NET-04-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-04-03",
+      "name": "IPv4",
+      "parentId": "NET-04",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-04-03-001",
+      "name": "IPv4 数据报格式",
+      "parentId": "NET-04-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-04-03-002",
+      "name": "IPv4 地址分类与特殊 IP 地址",
+      "parentId": "NET-04-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-04-03-003",
+      "name": "子网划分、子网掩码与 CIDR",
+      "parentId": "NET-04-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-04-03-004",
+      "name": "ARP、DHCP、ICMP 协议",
+      "parentId": "NET-04-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-04-04",
+      "name": "IPv6",
+      "parentId": "NET-04",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-04-04-001",
+      "name": "IPv6 数据报格式与地址类型",
+      "parentId": "NET-04-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-04-04-002",
+      "name": "IPv4 到 IPv6 的过渡技术（双栈、隧道）",
+      "parentId": "NET-04-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-04-05",
+      "name": "网络层设备",
+      "parentId": "NET-04",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-04-05-001",
+      "name": "路由器的组成与功能",
+      "parentId": "NET-04-05",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-04-05-002",
+      "name": "路由表与转发表",
+      "parentId": "NET-04-05",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-05",
+      "name": "传输层",
+      "parentId": "NET",
+      "symbolSize": 54
+    },
+    {
+      "id": "NET-05-01",
+      "name": "传输层的功能",
+      "parentId": "NET-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-05-01-001",
+      "name": "提供端到端通信、复用与分用",
+      "parentId": "NET-05-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-05-01-002",
+      "name": "传输层寻址（端口号、套接字 Socket）",
+      "parentId": "NET-05-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-05-02",
+      "name": "UDP 协议",
+      "parentId": "NET-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-05-02-001",
+      "name": "UDP 数据报格式与校验",
+      "parentId": "NET-05-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-05-03",
+      "name": "TCP 协议",
+      "parentId": "NET-05",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-05-03-001",
+      "name": "TCP 报文段格式（序号、确认号、窗口、标志位）",
+      "parentId": "NET-05-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-05-03-002",
+      "name": "TCP 连接管理（三次握手、四次挥手、状态转换）",
+      "parentId": "NET-05-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-05-03-003",
+      "name": "TCP 可靠传输（超时重传、冗余 ACK）",
+      "parentId": "NET-05-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-05-03-004",
+      "name": "TCP 流量控制（滑动窗口）",
+      "parentId": "NET-05-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-05-03-005",
+      "name": "TCP 拥塞控制（慢开始、拥塞避免、快重传、快恢复）",
+      "parentId": "NET-05-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-06",
+      "name": "应用层",
+      "parentId": "NET",
+      "symbolSize": 54
+    },
+    {
+      "id": "NET-06-01",
+      "name": "网络应用模型",
+      "parentId": "NET-06",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-06-01-001",
+      "name": "客户端/服务器模型（C/S）",
+      "parentId": "NET-06-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-06-01-002",
+      "name": "P2P 模型",
+      "parentId": "NET-06-01",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-06-02",
+      "name": "DNS 域名系统",
+      "parentId": "NET-06",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-06-02-001",
+      "name": "域名空间与域名服务器",
+      "parentId": "NET-06-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-06-02-002",
+      "name": "域名解析过程（递归查询、迭代查询）",
+      "parentId": "NET-06-02",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-06-03",
+      "name": "FTP 文件传输协议",
+      "parentId": "NET-06",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-06-03-001",
+      "name": "FTP 工作原理（控制连接、数据连接）",
+      "parentId": "NET-06-03",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-06-04",
+      "name": "电子邮件",
+      "parentId": "NET-06",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-06-04-001",
+      "name": "SMTP 与 POP3/IMAP 的工作流程",
+      "parentId": "NET-06-04",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-06-05",
+      "name": "WWW 万维网",
+      "parentId": "NET-06",
+      "symbolSize": 40
+    },
+    {
+      "id": "NET-06-05-001",
+      "name": "HTTP 协议（无状态、持久与非持久连接）",
+      "parentId": "NET-06-05",
+      "symbolSize": 28
+    },
+    {
+      "id": "NET-06-05-002",
+      "name": "URL、HTML、Cookie 机制",
+      "parentId": "NET-06-05",
+      "symbolSize": 28
+    }
+  ],
+  "links": [
+    {
+      "source": "DS",
+      "target": "DS-01"
+    },
+    {
+      "source": "DS-01",
+      "target": "DS-01-01"
+    },
+    {
+      "source": "DS-01-01",
+      "target": "DS-01-01-001"
+    },
+    {
+      "source": "DS-01-01",
+      "target": "DS-01-01-002"
+    },
+    {
+      "source": "DS-01",
+      "target": "DS-01-02"
+    },
+    {
+      "source": "DS-01-02",
+      "target": "DS-01-02-001"
+    },
+    {
+      "source": "DS-01-02",
+      "target": "DS-01-02-002"
+    },
+    {
+      "source": "DS-01-02",
+      "target": "DS-01-02-003"
+    },
+    {
+      "source": "DS",
+      "target": "DS-02"
+    },
+    {
+      "source": "DS-02",
+      "target": "DS-02-01"
+    },
+    {
+      "source": "DS-02-01",
+      "target": "DS-02-01-001"
+    },
+    {
+      "source": "DS-02",
+      "target": "DS-02-02"
+    },
+    {
+      "source": "DS-02-02",
+      "target": "DS-02-02-001"
+    },
+    {
+      "source": "DS-02-02",
+      "target": "DS-02-02-002"
+    },
+    {
+      "source": "DS-02",
+      "target": "DS-02-03"
+    },
+    {
+      "source": "DS-02-03",
+      "target": "DS-02-03-001"
+    },
+    {
+      "source": "DS-02-03",
+      "target": "DS-02-03-002"
+    },
+    {
+      "source": "DS-02-03",
+      "target": "DS-02-03-003"
+    },
+    {
+      "source": "DS-02-03",
+      "target": "DS-02-03-004"
+    },
+    {
+      "source": "DS",
+      "target": "DS-03"
+    },
+    {
+      "source": "DS-03",
+      "target": "DS-03-01"
+    },
+    {
+      "source": "DS-03-01",
+      "target": "DS-03-01-001"
+    },
+    {
+      "source": "DS-03-01",
+      "target": "DS-03-01-002"
+    },
+    {
+      "source": "DS-03-01",
+      "target": "DS-03-01-003"
+    },
+    {
+      "source": "DS-03",
+      "target": "DS-03-02"
+    },
+    {
+      "source": "DS-03-02",
+      "target": "DS-03-02-001"
+    },
+    {
+      "source": "DS-03-02",
+      "target": "DS-03-02-002"
+    },
+    {
+      "source": "DS-03-02",
+      "target": "DS-03-02-003"
+    },
+    {
+      "source": "DS-03",
+      "target": "DS-03-03"
+    },
+    {
+      "source": "DS-03-03",
+      "target": "DS-03-03-001"
+    },
+    {
+      "source": "DS-03-03",
+      "target": "DS-03-03-002"
+    },
+    {
+      "source": "DS",
+      "target": "DS-04"
+    },
+    {
+      "source": "DS-04",
+      "target": "DS-04-01"
+    },
+    {
+      "source": "DS-04-01",
+      "target": "DS-04-01-001"
+    },
+    {
+      "source": "DS-04-01",
+      "target": "DS-04-01-002"
+    },
+    {
+      "source": "DS",
+      "target": "DS-05"
+    },
+    {
+      "source": "DS-05",
+      "target": "DS-05-01"
+    },
+    {
+      "source": "DS-05-01",
+      "target": "DS-05-01-001"
+    },
+    {
+      "source": "DS-05",
+      "target": "DS-05-02"
+    },
+    {
+      "source": "DS-05-02",
+      "target": "DS-05-02-001"
+    },
+    {
+      "source": "DS-05-02",
+      "target": "DS-05-02-002"
+    },
+    {
+      "source": "DS-05",
+      "target": "DS-05-03"
+    },
+    {
+      "source": "DS-05-03",
+      "target": "DS-05-03-001"
+    },
+    {
+      "source": "DS-05-03",
+      "target": "DS-05-03-002"
+    },
+    {
+      "source": "DS-05-03",
+      "target": "DS-05-03-003"
+    },
+    {
+      "source": "DS-05",
+      "target": "DS-05-04"
+    },
+    {
+      "source": "DS-05-04",
+      "target": "DS-05-04-001"
+    },
+    {
+      "source": "DS-05",
+      "target": "DS-05-05"
+    },
+    {
+      "source": "DS-05-05",
+      "target": "DS-05-05-001"
+    },
+    {
+      "source": "DS-05-05",
+      "target": "DS-05-05-002"
+    },
+    {
+      "source": "DS-05-05",
+      "target": "DS-05-05-003"
+    },
+    {
+      "source": "DS-05",
+      "target": "DS-05-06"
+    },
+    {
+      "source": "DS-05-06",
+      "target": "DS-05-06-001"
+    },
+    {
+      "source": "DS-05-06",
+      "target": "DS-05-06-002"
+    },
+    {
+      "source": "DS",
+      "target": "DS-06"
+    },
+    {
+      "source": "DS-06",
+      "target": "DS-06-01"
+    },
+    {
+      "source": "DS-06-01",
+      "target": "DS-06-01-001"
+    },
+    {
+      "source": "DS-06-01",
+      "target": "DS-06-01-002"
+    },
+    {
+      "source": "DS-06",
+      "target": "DS-06-02"
+    },
+    {
+      "source": "DS-06-02",
+      "target": "DS-06-02-001"
+    },
+    {
+      "source": "DS-06-02",
+      "target": "DS-06-02-002"
+    },
+    {
+      "source": "DS-06-02",
+      "target": "DS-06-02-003"
+    },
+    {
+      "source": "DS-06",
+      "target": "DS-06-03"
+    },
+    {
+      "source": "DS-06-03",
+      "target": "DS-06-03-001"
+    },
+    {
+      "source": "DS-06-03",
+      "target": "DS-06-03-002"
+    },
+    {
+      "source": "DS-06-03",
+      "target": "DS-06-03-003"
+    },
+    {
+      "source": "DS-06",
+      "target": "DS-06-04"
+    },
+    {
+      "source": "DS-06-04",
+      "target": "DS-06-04-001"
+    },
+    {
+      "source": "DS-06-04",
+      "target": "DS-06-04-002"
+    },
+    {
+      "source": "DS-06",
+      "target": "DS-06-05"
+    },
+    {
+      "source": "DS-06-05",
+      "target": "DS-06-05-001"
+    },
+    {
+      "source": "DS-06-05",
+      "target": "DS-06-05-002"
+    },
+    {
+      "source": "DS-06",
+      "target": "DS-06-06"
+    },
+    {
+      "source": "DS-06-06",
+      "target": "DS-06-06-001"
+    },
+    {
+      "source": "DS-06-06",
+      "target": "DS-06-06-002"
+    },
+    {
+      "source": "DS",
+      "target": "DS-07"
+    },
+    {
+      "source": "DS-07",
+      "target": "DS-07-01"
+    },
+    {
+      "source": "DS-07-01",
+      "target": "DS-07-01-001"
+    },
+    {
+      "source": "DS-07",
+      "target": "DS-07-02"
+    },
+    {
+      "source": "DS-07-02",
+      "target": "DS-07-02-001"
+    },
+    {
+      "source": "DS-07-02",
+      "target": "DS-07-02-002"
+    },
+    {
+      "source": "DS-07-02",
+      "target": "DS-07-02-003"
+    },
+    {
+      "source": "DS-07",
+      "target": "DS-07-03"
+    },
+    {
+      "source": "DS-07-03",
+      "target": "DS-07-03-001"
+    },
+    {
+      "source": "DS-07-03",
+      "target": "DS-07-03-002"
+    },
+    {
+      "source": "DS-07-03",
+      "target": "DS-07-03-003"
+    },
+    {
+      "source": "DS-07",
+      "target": "DS-07-04"
+    },
+    {
+      "source": "DS-07-04",
+      "target": "DS-07-04-001"
+    },
+    {
+      "source": "DS-07-04",
+      "target": "DS-07-04-002"
+    },
+    {
+      "source": "DS-07-04",
+      "target": "DS-07-04-003"
+    },
+    {
+      "source": "DS",
+      "target": "DS-08"
+    },
+    {
+      "source": "DS-08",
+      "target": "DS-08-01"
+    },
+    {
+      "source": "DS-08-01",
+      "target": "DS-08-01-001"
+    },
+    {
+      "source": "DS-08",
+      "target": "DS-08-02"
+    },
+    {
+      "source": "DS-08-02",
+      "target": "DS-08-02-001"
+    },
+    {
+      "source": "DS-08-02",
+      "target": "DS-08-02-002"
+    },
+    {
+      "source": "DS-08",
+      "target": "DS-08-03"
+    },
+    {
+      "source": "DS-08-03",
+      "target": "DS-08-03-001"
+    },
+    {
+      "source": "DS-08-03",
+      "target": "DS-08-03-002"
+    },
+    {
+      "source": "DS-08",
+      "target": "DS-08-04"
+    },
+    {
+      "source": "DS-08-04",
+      "target": "DS-08-04-001"
+    },
+    {
+      "source": "DS-08-04",
+      "target": "DS-08-04-002"
+    },
+    {
+      "source": "DS-08",
+      "target": "DS-08-05"
+    },
+    {
+      "source": "DS-08-05",
+      "target": "DS-08-05-001"
+    },
+    {
+      "source": "DS-08-05",
+      "target": "DS-08-05-002"
+    },
+    {
+      "source": "DS-08",
+      "target": "DS-08-06"
+    },
+    {
+      "source": "DS-08-06",
+      "target": "DS-08-06-001"
+    },
+    {
+      "source": "CS",
+      "target": "CS-01"
+    },
+    {
+      "source": "CS-01",
+      "target": "CS-01-01"
+    },
+    {
+      "source": "CS-01",
+      "target": "CS-01-02"
+    },
+    {
+      "source": "CS-01-02",
+      "target": "CS-01-02-001"
+    },
+    {
+      "source": "CS-01-02",
+      "target": "CS-01-02-002"
+    },
+    {
+      "source": "CS-01",
+      "target": "CS-01-03"
+    },
+    {
+      "source": "CS-01-03",
+      "target": "CS-01-03-001"
+    },
+    {
+      "source": "CS",
+      "target": "CS-02"
+    },
+    {
+      "source": "CS-02",
+      "target": "CS-02-01"
+    },
+    {
+      "source": "CS-02-01",
+      "target": "CS-02-01-001"
+    },
+    {
+      "source": "CS-02-01",
+      "target": "CS-02-01-002"
+    },
+    {
+      "source": "CS-02-01",
+      "target": "CS-02-01-003"
+    },
+    {
+      "source": "CS-02",
+      "target": "CS-02-02"
+    },
+    {
+      "source": "CS-02-02",
+      "target": "CS-02-02-001"
+    },
+    {
+      "source": "CS-02-02",
+      "target": "CS-02-02-002"
+    },
+    {
+      "source": "CS-02-02",
+      "target": "CS-02-02-003"
+    },
+    {
+      "source": "CS-02-02",
+      "target": "CS-02-02-004"
+    },
+    {
+      "source": "CS-02-02",
+      "target": "CS-02-02-005"
+    },
+    {
+      "source": "CS-02",
+      "target": "CS-02-03"
+    },
+    {
+      "source": "CS-02-03",
+      "target": "CS-02-03-001"
+    },
+    {
+      "source": "CS-02-03",
+      "target": "CS-02-03-002"
+    },
+    {
+      "source": "CS-02",
+      "target": "CS-02-04"
+    },
+    {
+      "source": "CS-02-04",
+      "target": "CS-02-04-001"
+    },
+    {
+      "source": "CS",
+      "target": "CS-03"
+    },
+    {
+      "source": "CS-03",
+      "target": "CS-03-01"
+    },
+    {
+      "source": "CS-03-01",
+      "target": "CS-03-01-001"
+    },
+    {
+      "source": "CS-03",
+      "target": "CS-03-02"
+    },
+    {
+      "source": "CS-03-02",
+      "target": "CS-03-02-001"
+    },
+    {
+      "source": "CS-03-02",
+      "target": "CS-03-02-002"
+    },
+    {
+      "source": "CS-03-02",
+      "target": "CS-03-02-003"
+    },
+    {
+      "source": "CS-03-02",
+      "target": "CS-03-02-004"
+    },
+    {
+      "source": "CS-03",
+      "target": "CS-03-03"
+    },
+    {
+      "source": "CS-03-03",
+      "target": "CS-03-03-001"
+    },
+    {
+      "source": "CS-03-03",
+      "target": "CS-03-03-002"
+    },
+    {
+      "source": "CS-03-03",
+      "target": "CS-03-03-003"
+    },
+    {
+      "source": "CS-03-03",
+      "target": "CS-03-03-004"
+    },
+    {
+      "source": "CS-03",
+      "target": "CS-03-04"
+    },
+    {
+      "source": "CS-03-04",
+      "target": "CS-03-04-001"
+    },
+    {
+      "source": "CS-03-04",
+      "target": "CS-03-04-002"
+    },
+    {
+      "source": "CS",
+      "target": "CS-04"
+    },
+    {
+      "source": "CS-04",
+      "target": "CS-04-01"
+    },
+    {
+      "source": "CS-04-01",
+      "target": "CS-04-01-001"
+    },
+    {
+      "source": "CS-04-01",
+      "target": "CS-04-01-002"
+    },
+    {
+      "source": "CS-04",
+      "target": "CS-04-02"
+    },
+    {
+      "source": "CS-04-02",
+      "target": "CS-04-02-001"
+    },
+    {
+      "source": "CS-04-02",
+      "target": "CS-04-02-002"
+    },
+    {
+      "source": "CS-04",
+      "target": "CS-04-03"
+    },
+    {
+      "source": "CS-04-03",
+      "target": "CS-04-03-001"
+    },
+    {
+      "source": "CS",
+      "target": "CS-05"
+    },
+    {
+      "source": "CS-05",
+      "target": "CS-05-01"
+    },
+    {
+      "source": "CS-05-01",
+      "target": "CS-05-01-001"
+    },
+    {
+      "source": "CS-05-01",
+      "target": "CS-05-01-002"
+    },
+    {
+      "source": "CS-05",
+      "target": "CS-05-02"
+    },
+    {
+      "source": "CS-05-02",
+      "target": "CS-05-02-001"
+    },
+    {
+      "source": "CS-05-02",
+      "target": "CS-05-02-002"
+    },
+    {
+      "source": "CS-05",
+      "target": "CS-05-03"
+    },
+    {
+      "source": "CS-05-03",
+      "target": "CS-05-03-001"
+    },
+    {
+      "source": "CS-05-03",
+      "target": "CS-05-03-002"
+    },
+    {
+      "source": "CS-05",
+      "target": "CS-05-04"
+    },
+    {
+      "source": "CS-05-04",
+      "target": "CS-05-04-001"
+    },
+    {
+      "source": "CS-05",
+      "target": "CS-05-05"
+    },
+    {
+      "source": "CS-05-05",
+      "target": "CS-05-05-001"
+    },
+    {
+      "source": "CS-05-05",
+      "target": "CS-05-05-002"
+    },
+    {
+      "source": "CS-05-05",
+      "target": "CS-05-05-003"
+    },
+    {
+      "source": "CS-05",
+      "target": "CS-05-06"
+    },
+    {
+      "source": "CS-05-06",
+      "target": "CS-05-06-001"
+    },
+    {
+      "source": "CS-05-06",
+      "target": "CS-05-06-002"
+    },
+    {
+      "source": "CS-05-06",
+      "target": "CS-05-06-003"
+    },
+    {
+      "source": "CS",
+      "target": "CS-06"
+    },
+    {
+      "source": "CS-06",
+      "target": "CS-06-01"
+    },
+    {
+      "source": "CS-06-01",
+      "target": "CS-06-01-001"
+    },
+    {
+      "source": "CS-06-01",
+      "target": "CS-06-01-002"
+    },
+    {
+      "source": "CS-06",
+      "target": "CS-06-02"
+    },
+    {
+      "source": "CS-06-02",
+      "target": "CS-06-02-001"
+    },
+    {
+      "source": "CS-06-02",
+      "target": "CS-06-02-002"
+    },
+    {
+      "source": "CS-06",
+      "target": "CS-06-03"
+    },
+    {
+      "source": "CS-06-03",
+      "target": "CS-06-03-001"
+    },
+    {
+      "source": "CS-06",
+      "target": "CS-06-04"
+    },
+    {
+      "source": "CS-06-04",
+      "target": "CS-06-04-001"
+    },
+    {
+      "source": "CS",
+      "target": "CS-07"
+    },
+    {
+      "source": "CS-07",
+      "target": "CS-07-01"
+    },
+    {
+      "source": "CS-07-01",
+      "target": "CS-07-01-001"
+    },
+    {
+      "source": "CS-07",
+      "target": "CS-07-02"
+    },
+    {
+      "source": "CS-07-02",
+      "target": "CS-07-02-001"
+    },
+    {
+      "source": "CS-07-02",
+      "target": "CS-07-02-002"
+    },
+    {
+      "source": "CS-07-02",
+      "target": "CS-07-02-003"
+    },
+    {
+      "source": "CS-07",
+      "target": "CS-07-03"
+    },
+    {
+      "source": "CS-07-03",
+      "target": "CS-07-03-001"
+    },
+    {
+      "source": "CS-07-03",
+      "target": "CS-07-03-002"
+    },
+    {
+      "source": "OS",
+      "target": "OS-01"
+    },
+    {
+      "source": "OS-01",
+      "target": "OS-01-01"
+    },
+    {
+      "source": "OS-01",
+      "target": "OS-01-02"
+    },
+    {
+      "source": "OS-01",
+      "target": "OS-01-03"
+    },
+    {
+      "source": "OS",
+      "target": "OS-02"
+    },
+    {
+      "source": "OS-02",
+      "target": "OS-02-01"
+    },
+    {
+      "source": "OS-02-01",
+      "target": "OS-02-01-001"
+    },
+    {
+      "source": "OS-02-01",
+      "target": "OS-02-01-002"
+    },
+    {
+      "source": "OS-02-01",
+      "target": "OS-02-01-003"
+    },
+    {
+      "source": "OS-02-01",
+      "target": "OS-02-01-004"
+    },
+    {
+      "source": "OS-02",
+      "target": "OS-02-02"
+    },
+    {
+      "source": "OS-02-02",
+      "target": "OS-02-02-001"
+    },
+    {
+      "source": "OS-02-02",
+      "target": "OS-02-02-002"
+    },
+    {
+      "source": "OS-02-02",
+      "target": "OS-02-02-003"
+    },
+    {
+      "source": "OS-02",
+      "target": "OS-02-03"
+    },
+    {
+      "source": "OS-02-03",
+      "target": "OS-02-03-001"
+    },
+    {
+      "source": "OS-02-03",
+      "target": "OS-02-03-002"
+    },
+    {
+      "source": "OS-02-03",
+      "target": "OS-02-03-003"
+    },
+    {
+      "source": "OS-02-03",
+      "target": "OS-02-03-004"
+    },
+    {
+      "source": "OS-02-03",
+      "target": "OS-02-03-005"
+    },
+    {
+      "source": "OS-02-03",
+      "target": "OS-02-03-006"
+    },
+    {
+      "source": "OS-02",
+      "target": "OS-02-04"
+    },
+    {
+      "source": "OS-02-04",
+      "target": "OS-02-04-001"
+    },
+    {
+      "source": "OS-02-04",
+      "target": "OS-02-04-002"
+    },
+    {
+      "source": "OS-02-04",
+      "target": "OS-02-04-003"
+    },
+    {
+      "source": "OS-02-04",
+      "target": "OS-02-04-004"
+    },
+    {
+      "source": "OS",
+      "target": "OS-03"
+    },
+    {
+      "source": "OS-03",
+      "target": "OS-03-01"
+    },
+    {
+      "source": "OS-03-01",
+      "target": "OS-03-01-001"
+    },
+    {
+      "source": "OS-03-01",
+      "target": "OS-03-01-002"
+    },
+    {
+      "source": "OS-03",
+      "target": "OS-03-02"
+    },
+    {
+      "source": "OS-03-02",
+      "target": "OS-03-02-001"
+    },
+    {
+      "source": "OS-03-02",
+      "target": "OS-03-02-002"
+    },
+    {
+      "source": "OS-03-02",
+      "target": "OS-03-02-003"
+    },
+    {
+      "source": "OS-03-02",
+      "target": "OS-03-02-004"
+    },
+    {
+      "source": "OS-03",
+      "target": "OS-03-03"
+    },
+    {
+      "source": "OS-03-03",
+      "target": "OS-03-03-001"
+    },
+    {
+      "source": "OS-03-03",
+      "target": "OS-03-03-002"
+    },
+    {
+      "source": "OS-03-03",
+      "target": "OS-03-03-003"
+    },
+    {
+      "source": "OS-03",
+      "target": "OS-03-04"
+    },
+    {
+      "source": "OS-03-04",
+      "target": "OS-03-04-001"
+    },
+    {
+      "source": "OS-03-04",
+      "target": "OS-03-04-002"
+    },
+    {
+      "source": "OS-03-04",
+      "target": "OS-03-04-003"
+    },
+    {
+      "source": "OS-03-04",
+      "target": "OS-03-04-004"
+    },
+    {
+      "source": "OS-03-04",
+      "target": "OS-03-04-005"
+    },
+    {
+      "source": "OS",
+      "target": "OS-04"
+    },
+    {
+      "source": "OS-04",
+      "target": "OS-04-01"
+    },
+    {
+      "source": "OS-04-01",
+      "target": "OS-04-01-001"
+    },
+    {
+      "source": "OS-04-01",
+      "target": "OS-04-01-002"
+    },
+    {
+      "source": "OS-04-01",
+      "target": "OS-04-01-003"
+    },
+    {
+      "source": "OS-04-01",
+      "target": "OS-04-01-004"
+    },
+    {
+      "source": "OS-04",
+      "target": "OS-04-02"
+    },
+    {
+      "source": "OS-04-02",
+      "target": "OS-04-02-001"
+    },
+    {
+      "source": "OS-04-02",
+      "target": "OS-04-02-002"
+    },
+    {
+      "source": "OS-04-02",
+      "target": "OS-04-02-003"
+    },
+    {
+      "source": "OS-04",
+      "target": "OS-04-03"
+    },
+    {
+      "source": "OS-04-03",
+      "target": "OS-04-03-001"
+    },
+    {
+      "source": "OS-04-03",
+      "target": "OS-04-03-002"
+    },
+    {
+      "source": "OS-04-03",
+      "target": "OS-04-03-003"
+    },
+    {
+      "source": "OS",
+      "target": "OS-05"
+    },
+    {
+      "source": "OS-05",
+      "target": "OS-05-01"
+    },
+    {
+      "source": "OS-05-01",
+      "target": "OS-05-01-001"
+    },
+    {
+      "source": "OS-05",
+      "target": "OS-05-02"
+    },
+    {
+      "source": "OS-05-02",
+      "target": "OS-05-02-001"
+    },
+    {
+      "source": "OS-05",
+      "target": "OS-05-03"
+    },
+    {
+      "source": "OS-05-03",
+      "target": "OS-05-03-001"
+    },
+    {
+      "source": "OS-05",
+      "target": "OS-05-04"
+    },
+    {
+      "source": "OS-05-04",
+      "target": "OS-05-04-001"
+    },
+    {
+      "source": "NET",
+      "target": "NET-01"
+    },
+    {
+      "source": "NET-01",
+      "target": "NET-01-01"
+    },
+    {
+      "source": "NET-01-01",
+      "target": "NET-01-01-001"
+    },
+    {
+      "source": "NET-01-01",
+      "target": "NET-01-01-002"
+    },
+    {
+      "source": "NET-01",
+      "target": "NET-01-02"
+    },
+    {
+      "source": "NET-01-02",
+      "target": "NET-01-02-001"
+    },
+    {
+      "source": "NET-01-02",
+      "target": "NET-01-02-002"
+    },
+    {
+      "source": "NET-01-02",
+      "target": "NET-01-02-003"
+    },
+    {
+      "source": "NET",
+      "target": "NET-02"
+    },
+    {
+      "source": "NET-02",
+      "target": "NET-02-01"
+    },
+    {
+      "source": "NET-02-01",
+      "target": "NET-02-01-001"
+    },
+    {
+      "source": "NET-02-01",
+      "target": "NET-02-01-002"
+    },
+    {
+      "source": "NET-02-01",
+      "target": "NET-02-01-003"
+    },
+    {
+      "source": "NET-02-01",
+      "target": "NET-02-01-004"
+    },
+    {
+      "source": "NET-02",
+      "target": "NET-02-02"
+    },
+    {
+      "source": "NET-02-02",
+      "target": "NET-02-02-001"
+    },
+    {
+      "source": "NET-02",
+      "target": "NET-02-03"
+    },
+    {
+      "source": "NET-02-03",
+      "target": "NET-02-03-001"
+    },
+    {
+      "source": "NET",
+      "target": "NET-03"
+    },
+    {
+      "source": "NET-03",
+      "target": "NET-03-01"
+    },
+    {
+      "source": "NET-03-01",
+      "target": "NET-03-01-001"
+    },
+    {
+      "source": "NET-03",
+      "target": "NET-03-02"
+    },
+    {
+      "source": "NET-03-02",
+      "target": "NET-03-02-001"
+    },
+    {
+      "source": "NET-03",
+      "target": "NET-03-03"
+    },
+    {
+      "source": "NET-03-03",
+      "target": "NET-03-03-001"
+    },
+    {
+      "source": "NET-03-03",
+      "target": "NET-03-03-002"
+    },
+    {
+      "source": "NET-03",
+      "target": "NET-03-04"
+    },
+    {
+      "source": "NET-03-04",
+      "target": "NET-03-04-001"
+    },
+    {
+      "source": "NET-03-04",
+      "target": "NET-03-04-002"
+    },
+    {
+      "source": "NET-03-04",
+      "target": "NET-03-04-003"
+    },
+    {
+      "source": "NET-03-04",
+      "target": "NET-03-04-004"
+    },
+    {
+      "source": "NET-03",
+      "target": "NET-03-05"
+    },
+    {
+      "source": "NET-03-05",
+      "target": "NET-03-05-001"
+    },
+    {
+      "source": "NET-03-05",
+      "target": "NET-03-05-002"
+    },
+    {
+      "source": "NET-03-05",
+      "target": "NET-03-05-003"
+    },
+    {
+      "source": "NET-03",
+      "target": "NET-03-06"
+    },
+    {
+      "source": "NET-03-06",
+      "target": "NET-03-06-001"
+    },
+    {
+      "source": "NET-03-06",
+      "target": "NET-03-06-002"
+    },
+    {
+      "source": "NET-03-06",
+      "target": "NET-03-06-003"
+    },
+    {
+      "source": "NET-03-06",
+      "target": "NET-03-06-004"
+    },
+    {
+      "source": "NET-03",
+      "target": "NET-03-07"
+    },
+    {
+      "source": "NET-03-07",
+      "target": "NET-03-07-001"
+    },
+    {
+      "source": "NET-03-07",
+      "target": "NET-03-07-002"
+    },
+    {
+      "source": "NET-03",
+      "target": "NET-03-08"
+    },
+    {
+      "source": "NET-03-08",
+      "target": "NET-03-08-001"
+    },
+    {
+      "source": "NET-03-08",
+      "target": "NET-03-08-002"
+    },
+    {
+      "source": "NET",
+      "target": "NET-04"
+    },
+    {
+      "source": "NET-04",
+      "target": "NET-04-01"
+    },
+    {
+      "source": "NET-04-01",
+      "target": "NET-04-01-001"
+    },
+    {
+      "source": "NET-04",
+      "target": "NET-04-02"
+    },
+    {
+      "source": "NET-04-02",
+      "target": "NET-04-02-001"
+    },
+    {
+      "source": "NET-04-02",
+      "target": "NET-04-02-002"
+    },
+    {
+      "source": "NET-04-02",
+      "target": "NET-04-02-003"
+    },
+    {
+      "source": "NET-04-02",
+      "target": "NET-04-02-004"
+    },
+    {
+      "source": "NET-04",
+      "target": "NET-04-03"
+    },
+    {
+      "source": "NET-04-03",
+      "target": "NET-04-03-001"
+    },
+    {
+      "source": "NET-04-03",
+      "target": "NET-04-03-002"
+    },
+    {
+      "source": "NET-04-03",
+      "target": "NET-04-03-003"
+    },
+    {
+      "source": "NET-04-03",
+      "target": "NET-04-03-004"
+    },
+    {
+      "source": "NET-04",
+      "target": "NET-04-04"
+    },
+    {
+      "source": "NET-04-04",
+      "target": "NET-04-04-001"
+    },
+    {
+      "source": "NET-04-04",
+      "target": "NET-04-04-002"
+    },
+    {
+      "source": "NET-04",
+      "target": "NET-04-05"
+    },
+    {
+      "source": "NET-04-05",
+      "target": "NET-04-05-001"
+    },
+    {
+      "source": "NET-04-05",
+      "target": "NET-04-05-002"
+    },
+    {
+      "source": "NET",
+      "target": "NET-05"
+    },
+    {
+      "source": "NET-05",
+      "target": "NET-05-01"
+    },
+    {
+      "source": "NET-05-01",
+      "target": "NET-05-01-001"
+    },
+    {
+      "source": "NET-05-01",
+      "target": "NET-05-01-002"
+    },
+    {
+      "source": "NET-05",
+      "target": "NET-05-02"
+    },
+    {
+      "source": "NET-05-02",
+      "target": "NET-05-02-001"
+    },
+    {
+      "source": "NET-05",
+      "target": "NET-05-03"
+    },
+    {
+      "source": "NET-05-03",
+      "target": "NET-05-03-001"
+    },
+    {
+      "source": "NET-05-03",
+      "target": "NET-05-03-002"
+    },
+    {
+      "source": "NET-05-03",
+      "target": "NET-05-03-003"
+    },
+    {
+      "source": "NET-05-03",
+      "target": "NET-05-03-004"
+    },
+    {
+      "source": "NET-05-03",
+      "target": "NET-05-03-005"
+    },
+    {
+      "source": "NET",
+      "target": "NET-06"
+    },
+    {
+      "source": "NET-06",
+      "target": "NET-06-01"
+    },
+    {
+      "source": "NET-06-01",
+      "target": "NET-06-01-001"
+    },
+    {
+      "source": "NET-06-01",
+      "target": "NET-06-01-002"
+    },
+    {
+      "source": "NET-06",
+      "target": "NET-06-02"
+    },
+    {
+      "source": "NET-06-02",
+      "target": "NET-06-02-001"
+    },
+    {
+      "source": "NET-06-02",
+      "target": "NET-06-02-002"
+    },
+    {
+      "source": "NET-06",
+      "target": "NET-06-03"
+    },
+    {
+      "source": "NET-06-03",
+      "target": "NET-06-03-001"
+    },
+    {
+      "source": "NET-06",
+      "target": "NET-06-04"
+    },
+    {
+      "source": "NET-06-04",
+      "target": "NET-06-04-001"
+    },
+    {
+      "source": "NET-06",
+      "target": "NET-06-05"
+    },
+    {
+      "source": "NET-06-05",
+      "target": "NET-06-05-001"
+    },
+    {
+      "source": "NET-06-05",
+      "target": "NET-06-05-002"
+    }
+  ]
+}
