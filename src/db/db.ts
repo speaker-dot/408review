@@ -17,6 +17,18 @@ class Cs408Database extends Dexie {
     this.version(1).stores({
       nodes: 'id, category, parentId, difficulty',
     })
+
+    /**
+     * 内容库 v2 对应 2026-07 的全量讲解与题库升级。
+     * 旧版节点与新版共用相同主键，若不清理就会被永久优先读取；
+     * 因此只在数据库从 v1 升级到 v2 时清空节点缓存，随后由带哈希的
+     * 静态 JSON 或 Service Worker 离线缓存重新填充。
+     */
+    this.version(2)
+      .stores({
+        nodes: 'id, category, parentId, difficulty',
+      })
+      .upgrade((transaction) => transaction.table('nodes').clear())
   }
 }
 
@@ -25,7 +37,8 @@ export const db = new Cs408Database()
 
 /**
  * 从本地数据库读取知识点。
- * 未命中时返回 undefined，调用方可继续向静态 JSON 发起请求。
+ * 未命中时返回 undefined。命中只代表存在离线副本，不代表它一定是
+ * 服务器上的最新版本；在线状态下调用方仍应尝试获取新版内容。
  */
 export async function getNode(
   id: string,

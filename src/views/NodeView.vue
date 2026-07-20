@@ -95,19 +95,30 @@ watch(
     loading.value = true
 
     try {
-      // IndexedDB 优先：离线访问及二次打开均不依赖网络。
+      // 先读取离线副本作为网络失败时的兜底，但在线时不能直接返回：
+      // 否则部署新内容后，已访问过的节点会永远停留在旧版 Dexie 数据中。
       const cachedNode = await getNode(id)
       if (controller.signal.aborted) return
 
-      if (cachedNode) {
+      if (!navigator.onLine && cachedNode) {
         node.value = cachedNode
         return
       }
 
-      // 首次访问从静态 JSON 加载；Service Worker 负责 HTTP 缓存层。
-      const remoteNode = await fetchNode(id, controller.signal)
-      await saveNode(remoteNode)
-      if (!controller.signal.aborted) node.value = remoteNode
+      try {
+        // 带哈希的 JSON URL 会随内容变化，在线访问可可靠获得当前版本；
+        // Service Worker 同时保留该响应，供后续完全离线使用。
+        const remoteNode = await fetchNode(id, controller.signal)
+        await saveNode(remoteNode)
+        if (!controller.signal.aborted) node.value = remoteNode
+      } catch (remoteError) {
+        // 网络状态判断并非绝对可靠；请求失败时只要存在本地副本仍可阅读。
+        if (cachedNode) {
+          node.value = cachedNode
+          return
+        }
+        throw remoteError
+      }
     } catch (error) {
       if (controller.signal.aborted) return
       errorMessage.value =

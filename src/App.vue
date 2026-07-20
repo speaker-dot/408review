@@ -1,7 +1,34 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { useRegisterSW } from 'virtual:pwa-register/vue'
+import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
 const isOnline = ref(navigator.onLine)
+const updateFailed = ref(false)
+
+/**
+ * 主动接管 Service Worker 更新：发现新部署时安装、接管并刷新当前页面。
+ * 这能避免用户长期开着旧版 PWA，误以为 GitHub Pages 没有更新。
+ */
+const { needRefresh, updateServiceWorker } = useRegisterSW({
+  immediate: true,
+  onRegisteredSW(_swUrl, registration) {
+    if (!registration) return
+    window.setInterval(() => void registration.update(), 60 * 60 * 1000)
+  },
+})
+
+async function applyUpdate(): Promise<void> {
+  updateFailed.value = false
+  try {
+    await updateServiceWorker(true)
+  } catch {
+    updateFailed.value = true
+  }
+}
+
+watch(needRefresh, (available) => {
+  if (available) void applyUpdate()
+})
 
 function syncNetworkStatus(): void {
   isOnline.value = navigator.onLine
@@ -20,6 +47,11 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="app-shell">
+    <aside v-if="needRefresh" class="update-banner" role="status">
+      <span>{{ updateFailed ? '自动更新失败，请手动重试。' : '发现新版本，正在更新…' }}</span>
+      <button v-if="updateFailed" type="button" @click="applyUpdate">立即更新</button>
+    </aside>
+
     <header class="site-header">
       <RouterLink class="brand" to="/" aria-label="返回 408 MindMap 首页">
         <span class="brand-mark">408</span>

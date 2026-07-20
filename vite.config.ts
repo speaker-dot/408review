@@ -47,8 +47,8 @@ export default defineConfig({
     VitePWA({
       base,
       scope: base,
-      // 新 Service Worker 安装后自动接管页面，适合内容频繁更新的学习应用。
-      registerType: 'autoUpdate',
+      // 由 App.vue 监听新版本并触发接管、刷新，避免旧页面长期驻留。
+      registerType: 'prompt',
       injectRegister: 'auto',
       manifest: {
         name: '408 MindMap PWA',
@@ -77,7 +77,7 @@ export default defineConfig({
             urlPattern: /\/(?:src\/content|assets)\/.*\.json$/,
             handler: 'StaleWhileRevalidate',
             options: {
-              cacheName: 'knowledge-content-v1',
+              cacheName: 'knowledge-content-v2',
               expiration: {
                 maxEntries: 500,
                 maxAgeSeconds: 60 * 60 * 24 * 30,

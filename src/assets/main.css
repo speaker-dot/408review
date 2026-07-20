@@ -146,6 +146,36 @@ a {
   box-shadow: 0 0 0 4px rgba(240, 100, 43, 0.12);
 }
 
+.update-banner {
+  position: fixed;
+  z-index: 100;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  max-width: min(28rem, calc(100% - 2rem));
+  padding: 0.85rem 1rem;
+  border: 1px solid #cbd7f7;
+  border-radius: 0.8rem;
+  background: #f3f6ff;
+  box-shadow: 0 0.8rem 2rem rgb(40 57 98 / 16%);
+  color: #29438e;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.update-banner button {
+  padding: 0.45rem 0.65rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--navy);
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  white-space: nowrap;
+}
+
 .home-view {
   width: min(100% - 3rem, 90rem);
   margin: 0 auto;
