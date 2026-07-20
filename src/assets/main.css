@@ -706,28 +706,81 @@ a {
   counter-reset: trap;
 }
 
-.traps-card li {
-  display: grid;
-  grid-template-columns: 2rem 1fr;
-  gap: 0.8rem;
-  align-items: start;
-  color: #4c5666;
-  font-size: 0.9rem;
-  line-height: 1.7;
-  counter-increment: trap;
+.trap-item {
+  padding: 1rem 1.1rem;
+  border: 1px solid #f1d8cc;
+  border-radius: 0.85rem;
+  background: rgb(255 255 255 / 76%);
 }
 
-.traps-card li::before {
+.trap-title {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.trap-title > span {
   display: grid;
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.9rem;
+  height: 1.9rem;
+  flex: 0 0 auto;
   place-items: center;
   border-radius: 50%;
   background: #ffebe2;
   color: #b74c25;
-  content: counter(trap);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 800;
+}
+
+.trap-title h3 {
+  margin: 0;
+  color: #733c28;
+  font-size: 0.98rem;
+}
+
+.trap-item dl {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0.9rem 0 0;
+}
+
+.trap-item dl > div {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+.trap-item dt {
+  color: #a14f31;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.trap-item dd,
+.trap-item dd .markdown-content > :first-child {
+  margin: 0;
+}
+
+.source-link,
+.quiz-source {
+  color: #526cae;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.source-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+}
+
+.source-link:hover,
+.quiz-source:hover {
+  text-decoration: underline;
+}
+
+.source-text:hover {
+  text-decoration: none;
 }
 
 .quiz-section {
@@ -749,6 +802,10 @@ a {
   align-items: center;
   gap: 0.6rem;
   margin-bottom: 1rem;
+}
+
+.quiz-source {
+  margin-left: auto;
 }
 
 .quiz-number {

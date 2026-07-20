@@ -49,6 +49,19 @@ watch(
       <span class="quiz-type">
         {{ quiz.type === 'choice' ? '单项选择' : quiz.type === 'fill' ? '填空题' : '综合分析' }}
       </span>
+      <a
+        v-if="quiz.source.url"
+        class="quiz-source"
+        :href="quiz.source.url"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ quiz.source.label }}{{ quiz.source.questionNo ? ` · ${quiz.source.questionNo}` : '' }}
+        · {{ quiz.source.adapted ? '改编' : '原题' }}
+      </a>
+      <span v-else class="quiz-source">
+        {{ quiz.source.label }} · {{ quiz.source.adapted ? '改编' : '原创' }}
+      </span>
     </div>
 
     <MarkdownContent class="quiz-question" :content="quiz.question" />

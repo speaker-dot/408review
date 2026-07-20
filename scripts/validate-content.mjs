@@ -6,9 +6,12 @@ const projectRoot = fileURLToPath(new URL('..', import.meta.url))
 const contentRoot = path.join(projectRoot, 'src', 'content')
 const folders = { DS: 'ds', CS: 'cs', OS: 'os', NET: 'net' }
 const requiredHeadings = [
+  '### 学习目标与直觉',
   '### 核心定义',
   '### 数据结构',
   '### 算法步骤',
+  '### 关键公式',
+  '### 例题推演',
   '### 408考情',
 ]
 const errors = []
@@ -68,7 +71,10 @@ for (const [category, folder] of Object.entries(folders)) {
     for (const heading of requiredHeadings) {
       assert(node.details.includes(heading), `${label}: details 缺少 ${heading}`)
     }
+    assert(node.details.length >= 1800, `${label}: details 少于 1800 字符，讲解过短`)
     assert(node.details.includes('$'), `${label}: details 缺少 LaTeX 数学表达式`)
+    assert(node.details.includes('|---|'), `${label}: details 缺少过程/公式表格`)
+    assert(!node.details.includes('课程中的一个考查单元'), `${label}: details 仍含旧版泛化定义`)
     if (node.parentId !== category) {
       assert(
         node.details.includes(`(参见 ID: ${node.parentId})`),
@@ -77,24 +83,45 @@ for (const [category, folder] of Object.entries(folders)) {
     }
     assert(
       Array.isArray(node.traps) &&
-        node.traps.length >= 2 &&
-        node.traps.every((item) => typeof item === 'string' && item.length > 0),
+        node.traps.length >= 4 &&
+        node.traps.every(
+          (item) =>
+            typeof item?.title === 'string' &&
+            item.title.length > 0 &&
+            item.mistake?.length >= 8 &&
+            item.why?.length >= 30 &&
+            item.correction?.length >= 30 &&
+            item.example?.length >= 30 &&
+            typeof item.source?.label === 'string',
+        ),
       `${label}: traps 不合格`,
     )
-    assert(Array.isArray(node.quizzes) && node.quizzes.length === 2, `${label}: quizzes 数量不是 2`)
+    assert(Array.isArray(node.quizzes) && node.quizzes.length === 7, `${label}: quizzes 数量不是 7`)
 
-    const [choice, analysis] = node.quizzes ?? []
-    assert(choice?.id === `${node.id}-Q001`, `${label}: 选择题 id 不正确`)
-    assert(choice?.type === 'choice', `${label}: 第一题不是 choice`)
-    assert(Array.isArray(choice?.options) && choice.options.length === 4, `${label}: 选择题选项不是 4 个`)
-    assert(typeof choice?.answer === 'string' && choice.answer.length > 0, `${label}: 选择题答案为空`)
-    assert(choice?.explanation?.length >= 120, `${label}: 选择题解析过短`)
+    const quizzes = node.quizzes ?? []
+    quizzes.forEach((quiz, index) => {
+      assert(quiz?.id === `${node.id}-Q${String(index + 1).padStart(3, '0')}`, `${label}: 第 ${index + 1} 题 id 不正确`)
+      assert(typeof quiz?.source?.label === 'string', `${label}: 第 ${index + 1} 题缺少来源`)
+      if (quiz?.source?.adapted) {
+        assert(Boolean(quiz.source.year && quiz.source.questionNo && quiz.source.url), `${label}: 第 ${index + 1} 题真题来源不可追溯`)
+      }
+    })
 
-    assert(analysis?.id === `${node.id}-Q002`, `${label}: 分析题 id 不正确`)
-    assert(analysis?.type === 'analysis', `${label}: 第二题不是 analysis`)
-    assert(analysis?.question?.includes('|---|'), `${label}: 分析题题干缺少标准表格`)
-    assert(analysis?.answer?.includes('|---|'), `${label}: 分析题答案缺少推导表格`)
-    assert(analysis?.explanation?.length >= 120, `${label}: 分析题解析过短`)
+    const choices = quizzes.filter((quiz) => quiz.type === 'choice')
+    const analyses = quizzes.filter((quiz) => quiz.type === 'analysis')
+    assert(choices.length === 5, `${label}: 选择题数量不是 5`)
+    assert(analyses.length === 2, `${label}: 综合题数量不是 2`)
+    for (const choice of choices) {
+      assert(Array.isArray(choice.options) && choice.options.length === 4, `${label}/${choice.id}: 选项不是 4 个`)
+      assert(/^[ABCD]$/.test(choice.answer), `${label}/${choice.id}: 答案不是 A-D`)
+      assert(choice.explanation?.length >= 180, `${label}/${choice.id}: 解析过短`)
+    }
+    for (const analysis of analyses) {
+      assert(analysis.question?.includes('|---|'), `${label}/${analysis.id}: 题干缺少标准表格`)
+      assert(analysis.answer?.includes('|---|'), `${label}/${analysis.id}: 答案缺少推导表格`)
+      assert(analysis.explanation?.length >= 180, `${label}/${analysis.id}: 解析过短`)
+      assert(!analysis.question.includes('某系统需要使用'), `${label}/${analysis.id}: 仍含旧版泛化题干`)
+    }
 
     assert(!records.has(node.id), `${label}: id 重复`)
     records.set(node.id, node)

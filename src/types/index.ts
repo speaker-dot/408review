@@ -4,6 +4,15 @@ export type KnowledgeCategory = 'DS' | 'OS' | 'CS' | 'NET'
 /** 题目类型：选择、填空、分析。 */
 export type QuizType = 'choice' | 'fill' | 'analysis'
 
+/** 题目来源。真题只保存来源信息，题干在本站中均为改编或重新表述。 */
+export interface QuizSource {
+  label: string
+  year?: number
+  questionNo?: string
+  url?: string
+  adapted: boolean
+}
+
 /**
  * 习题接口。
  * question、answer 与 explanation 均允许存放 Markdown/LaTeX 字符串，
@@ -16,6 +25,17 @@ export interface Quiz {
   options?: string[]
   answer: string
   explanation: string
+  source: QuizSource
+}
+
+/** 结构化易错项：不仅指出错法，还解释原因、纠正步骤与对应例题。 */
+export interface ExamTrap {
+  title: string
+  mistake: string
+  why: string
+  correction: string
+  example: string
+  source?: QuizSource
 }
 
 /** 单个知识点详情，是 Dexie 中 nodes 表的记录类型。 */
@@ -29,7 +49,7 @@ export interface KnowledgeNode {
   summary: string
   /** 详细讲解，允许使用 Markdown 与 LaTeX。 */
   details: string
-  traps: string[]
+  traps: ExamTrap[]
   quizzes: Quiz[]
 }
 

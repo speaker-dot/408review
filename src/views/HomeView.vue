@@ -129,7 +129,7 @@ function openNode(nodeId: string): void {
         <span>结构化知识节点</span>
         <div>
           <small>4 门科目</small>
-          <small>710 道练习</small>
+          <small>2485 道练习</small>
         </div>
       </div>
     </section>

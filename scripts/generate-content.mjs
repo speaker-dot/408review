@@ -2,6 +2,12 @@ import { mkdir, writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 
+import {
+  buildQuizSet,
+  buildRichDetails,
+  buildRichTraps,
+} from './content-v2.mjs'
+
 const projectRoot = fileURLToPath(new URL('..', import.meta.url))
 const contentRoot = path.join(projectRoot, 'src', 'content')
 
@@ -1523,7 +1529,7 @@ function resolveProfile(node, children) {
     : `围绕“${node.name}”建立对象、状态、约束和结果四类信息，并明确各量的单位与边界。`
 
   return {
-    definition: `${node.name}是${meta.name}课程中的一个考查单元，核心是准确界定对象、约束、操作过程与可验证结论。`,
+    definition: `“${node.name}”围绕${meta.name}中的对象、约束、操作过程与可验证结论展开；学习重点是认清它处理什么问题、何时适用以及怎样检查结果。`,
     structure: childText,
     procedure:
       '读取题设并标注已知量；判断适用模型及前置条件；按定义或规则逐步推导；核对边界、单位与最终结论。',
@@ -1719,9 +1725,14 @@ async function main() {
       parentId: node.parentId,
       difficulty: inferDifficulty(node),
       summary: compactSummary(node, profile),
-      details: buildDetails(node, profile, children),
-      traps: profile.traps,
-      quizzes: [buildChoice(node, profile), buildAnalysis(node, profile)],
+      details: buildRichDetails(
+        node,
+        profile,
+        children,
+        subjectMeta[node.category].name,
+      ),
+      traps: buildRichTraps(node, profile),
+      quizzes: buildQuizSet(node, profile, buildAnalysis(node, profile)),
     }
 
     const target = path.join(

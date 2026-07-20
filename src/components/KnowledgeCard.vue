@@ -48,8 +48,44 @@ const categoryNames = {
         <span class="section-kicker">EXAM TRAPS</span>
         <h2>易错点清单</h2>
       </div>
-      <ol>
-        <li v-for="trap in node.traps" :key="trap">{{ trap }}</li>
+      <ol class="trap-list">
+        <li v-for="(trap, index) in node.traps" :key="`${trap.title}-${index}`" class="trap-item">
+          <div class="trap-title">
+            <span>{{ String(index + 1).padStart(2, '0') }}</span>
+            <h3>{{ trap.title }}</h3>
+          </div>
+          <dl>
+            <div>
+              <dt>常见错法</dt>
+              <dd><MarkdownContent :content="trap.mistake" /></dd>
+            </div>
+            <div>
+              <dt>为什么错</dt>
+              <dd><MarkdownContent :content="trap.why" /></dd>
+            </div>
+            <div>
+              <dt>纠正方法</dt>
+              <dd><MarkdownContent :content="trap.correction" /></dd>
+            </div>
+            <div>
+              <dt>例题支撑</dt>
+              <dd><MarkdownContent :content="trap.example" /></dd>
+            </div>
+          </dl>
+          <a
+            v-if="trap.source?.url"
+            class="source-link"
+            :href="trap.source.url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ trap.source.label }}{{ trap.source.questionNo ? ` · ${trap.source.questionNo}` : '' }}
+            （{{ trap.source.adapted ? '改编' : '原题' }}）
+          </a>
+          <span v-else-if="trap.source" class="source-link source-text">
+            {{ trap.source.label }}（{{ trap.source.adapted ? '改编' : '原创' }}）
+          </span>
+        </li>
       </ol>
     </section>
 
