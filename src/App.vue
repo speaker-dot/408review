@@ -61,6 +61,11 @@ onBeforeUnmount(() => {
         </span>
       </RouterLink>
 
+      <nav class="site-nav" aria-label="主要导航">
+        <RouterLink to="/">知识图谱</RouterLink>
+        <RouterLink to="/papers">考研真题与解析</RouterLink>
+      </nav>
+
       <div class="network-pill" :class="{ offline: !isOnline }">
         <span class="network-dot" />
         {{ isOnline ? '在线 · 内容已支持离线' : '离线模式' }}
@@ -71,7 +76,7 @@ onBeforeUnmount(() => {
 
     <footer class="site-footer">
       <span>408 MindMap PWA</span>
-      <span>355 个结构化知识节点 · 本地优先</span>
+      <span>355 个结构化知识节点 · 真题中心 · 本地优先</span>
     </footer>
   </div>
 </template>

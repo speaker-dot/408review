@@ -87,6 +87,21 @@ export default defineConfig({
               },
             },
           },
+          {
+            // 真题 PDF 体积较大，不加入首次预缓存；阅读或主动下载后按年缓存。
+            urlPattern: /\/papers\/\d{4}\/(?:paper|solution)\.pdf$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'exam-papers-v1',
+              expiration: {
+                maxEntries: 30,
+                maxAgeSeconds: 60 * 60 * 24 * 365,
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
         ],
       },
       devOptions: {

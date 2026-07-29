@@ -16,6 +16,17 @@ const router = createRouter({
       props: true,
     },
     {
+      path: '/papers',
+      name: 'papers',
+      component: () => import('@/views/PapersView.vue'),
+    },
+    {
+      path: '/papers/:year',
+      name: 'paper-reader',
+      component: () => import('@/views/PaperReaderView.vue'),
+      props: true,
+    },
+    {
       path: '/:pathMatch(.*)*',
       redirect: '/',
     },

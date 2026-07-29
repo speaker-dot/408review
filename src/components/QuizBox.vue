@@ -77,7 +77,11 @@ watch(
           :disabled="submitted"
           @click="selectedOption = option"
         >
-          {{ option }}
+          <!--
+            选项也可能包含 Markdown 与 LaTeX（例如 $j=next[j]$）。
+            必须与题干、解析使用同一个渲染入口，否则公式会以源码形式显示。
+          -->
+          <MarkdownContent :content="option" />
         </button>
       </div>
 

@@ -129,7 +129,7 @@ function openNode(nodeId: string): void {
         <span>结构化知识节点</span>
         <div>
           <small>4 门科目</small>
-          <small>2485 道练习</small>
+          <small>按考法精选，不凑题数</small>
         </div>
       </div>
     </section>
@@ -158,7 +158,7 @@ function openNode(nodeId: string): void {
         <div>
           <span class="section-kicker">KNOWLEDGE EXPLORER</span>
           <h2>{{ activeSubject.name }}知识图谱</h2>
-          <p>拖动画布、缩放视图，点击任意节点进入详情。</p>
+          <p>沿层级从左向右浏览，滚动查看完整图谱，点击节点进入详情。</p>
         </div>
 
         <label class="search-box">

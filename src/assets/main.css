@@ -115,6 +115,37 @@ a {
   letter-spacing: 0.05em;
 }
 
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.54);
+}
+
+.site-nav a {
+  padding: 0.52rem 0.72rem;
+  border-radius: 0.55rem;
+  color: #68758a;
+  font-size: 0.72rem;
+  font-weight: 750;
+  text-decoration: none;
+  transition: 150ms ease;
+}
+
+.site-nav a:hover {
+  color: #2948aa;
+}
+
+.site-nav a.router-link-exact-active,
+.site-nav a.router-link-active:not([href$="#/"]) {
+  background: #ffffff;
+  box-shadow: 0 0.3rem 0.8rem rgba(30, 41, 59, 0.07);
+  color: #253b82;
+}
+
 .network-pill {
   display: inline-flex;
   align-items: center;
@@ -144,6 +175,27 @@ a {
 .network-pill.offline .network-dot {
   background: var(--orange);
   box-shadow: 0 0 0 4px rgba(240, 100, 43, 0.12);
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+
+  .site-nav {
+    order: 3;
+    width: 100%;
+  }
+
+  .site-nav a {
+    flex: 1;
+    text-align: center;
+  }
+
+  .network-pill {
+    font-size: 0;
+  }
 }
 
 .update-banner {
@@ -670,8 +722,64 @@ a {
   letter-spacing: -0.025em;
 }
 
+.markdown-content h3:first-child {
+  margin-top: 0;
+}
+
 .markdown-content p {
   margin: 0.65rem 0;
+}
+
+.markdown-content strong {
+  color: #17213a;
+  font-weight: 760;
+}
+
+.markdown-content blockquote {
+  margin: 0 0 1.6rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid #d8e1f5;
+  border-left: 4px solid var(--blue);
+  border-radius: 0.85rem;
+  background: linear-gradient(120deg, #f4f7ff, #fbfcff);
+  color: #273551;
+}
+
+.markdown-content blockquote p {
+  margin: 0.32rem 0;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin: 0.75rem 0;
+  padding-left: 1.35rem;
+}
+
+.markdown-content li {
+  margin: 0.4rem 0;
+  padding-left: 0.18rem;
+}
+
+.markdown-content code {
+  padding: 0.12rem 0.32rem;
+  border-radius: 0.32rem;
+  background: #eef1f6;
+  color: #334155;
+  font-size: 0.86em;
+}
+
+.markdown-content pre {
+  overflow-x: auto;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: #172033;
+  color: #e8edf8;
+}
+
+.markdown-content pre code {
+  padding: 0;
+  background: transparent;
+  color: inherit;
 }
 
 .markdown-content table {
@@ -875,6 +983,17 @@ a {
   text-align: left;
   cursor: pointer;
   transition: 140ms ease;
+}
+
+/* 选择题选项现在通过 MarkdownContent 渲染；保持按钮原有排版与颜色。 */
+.quiz-option .markdown-content {
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.quiz-option .markdown-content p {
+  margin: 0;
 }
 
 .quiz-option:hover:not(:disabled),

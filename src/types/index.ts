@@ -72,3 +72,60 @@ export interface MindMapIndex {
   nodes: MindMapNode[]
   links: MindMapLink[]
 }
+
+/** 真题 PDF 文件元数据。文件本体按需缓存，不进入 Dexie。 */
+export interface PaperAsset {
+  label: string
+  url: string
+  pages: number
+  bytes: number
+  sha256: string
+}
+
+/** 真题来源信息，用于区分原卷、回忆版和第三方参考答案。 */
+export interface PaperSource {
+  publisher: string
+  pageUrl: string
+  paperLabel: string
+  solutionLabel: string
+  verifiedAt: string
+  note: string
+}
+
+/** 题号与知识图谱节点之间的轻量关联。 */
+export interface PaperQuestionLink {
+  questionNo: number
+  type: 'choice' | 'analysis'
+  subject: KnowledgeCategory
+  paperPage: number
+  difficulty: 1 | 2 | 3 | 4 | 5
+  nodeIds: string[]
+}
+
+/** 单个年份的真题资料。 */
+export interface ExamPaper {
+  year: number
+  title: string
+  examDate: string
+  totalScore: number
+  durationMinutes: number
+  status: 'verified' | 'reviewing' | 'recalled'
+  featured?: boolean
+  paper: PaperAsset
+  solution: PaperAsset
+  source: PaperSource
+  questionLinks: PaperQuestionLink[]
+}
+
+export interface ExamPaperIndex {
+  papers: ExamPaper[]
+}
+
+/** Dexie 中保存的本地阅读进度。 */
+export interface PaperProgress {
+  year: number
+  paperPage: number
+  solutionPage: number
+  completed: boolean
+  updatedAt: number
+}

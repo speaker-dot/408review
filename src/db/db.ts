@@ -1,6 +1,6 @@
 import Dexie, { type EntityTable } from 'dexie'
 
-import type { KnowledgeNode } from '@/types'
+import type { KnowledgeNode, PaperProgress } from '@/types'
 
 /**
  * 408 MindMap 的浏览器本地数据库。
@@ -10,6 +10,7 @@ import type { KnowledgeNode } from '@/types'
  */
 class Cs408Database extends Dexie {
   nodes!: EntityTable<KnowledgeNode, 'id'>
+  paperProgress!: EntityTable<PaperProgress, 'year'>
 
   constructor() {
     super('cs408-mindmap')
@@ -29,6 +30,12 @@ class Cs408Database extends Dexie {
         nodes: 'id, category, parentId, difficulty',
       })
       .upgrade((transaction) => transaction.table('nodes').clear())
+
+    // v3 只新增真题阅读进度表，不触碰已经缓存的知识节点。
+    this.version(3).stores({
+      nodes: 'id, category, parentId, difficulty',
+      paperProgress: 'year, updatedAt, completed',
+    })
   }
 }
 
@@ -52,4 +59,16 @@ export async function getNode(
  */
 export async function saveNode(node: KnowledgeNode): Promise<string> {
   return db.nodes.put(node)
+}
+
+export async function getPaperProgress(
+  year: number,
+): Promise<PaperProgress | undefined> {
+  return db.paperProgress.get(year)
+}
+
+export async function savePaperProgress(
+  progress: PaperProgress,
+): Promise<number> {
+  return db.paperProgress.put(progress)
 }

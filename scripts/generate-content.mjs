@@ -6,7 +6,7 @@ import {
   buildQuizSet,
   buildRichDetails,
   buildRichTraps,
-} from './content-v2.mjs'
+} from './content-v3.mjs'
 
 const projectRoot = fileURLToPath(new URL('..', import.meta.url))
 const contentRoot = path.join(projectRoot, 'src', 'content')
