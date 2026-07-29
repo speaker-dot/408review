@@ -64,7 +64,9 @@ export default defineConfig({
       workbox: {
         // 预缓存应用外壳、构建后的静态资源，以及 emitContentIndex 输出的索引。
         globPatterns: [
-          '**/*.{js,css,html,ico,png,svg,webp,woff,woff2,json}',
+          // PDF.js 的 Worker 由 Vite 输出为 `.mjs`。必须纳入预缓存，
+          // 否则断网时主页面虽然能打开，PDF 渲染仍会因 Worker 请求失败。
+          '**/*.{js,mjs,css,html,ico,png,svg,webp,woff,woff2,json}',
         ],
         cleanupOutdatedCaches: true,
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
