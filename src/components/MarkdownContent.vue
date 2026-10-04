@@ -37,6 +37,11 @@ const renderedContent = computed(() => {
   source = source.replace(/\$([^$\n]+?)\$/g, (_match, math: string) =>
     stash(math, false),
   )
+  // 知识前置关系直接可点；Hash 路由在离线部署和 GitHub 子路径下均有效。
+  source = source.replace(
+    /\(参见 ID:\s*((?:DS|CS|OS|NET)(?:-\d{2}){1,2}(?:-\d{3})?)\)/g,
+    (_match, id: string) => `(参见 [${id}](#/node/${id}))`,
+  )
 
   const safeHtml = DOMPurify.sanitize(markdown.render(source), {
     USE_PROFILES: { html: true },

@@ -5,6 +5,8 @@ import { useRoute } from 'vue-router'
 import KnowledgeCard from '@/components/KnowledgeCard.vue'
 import { getNode, saveNode } from '@/db/db'
 import type { KnowledgeCategory, KnowledgeNode } from '@/types'
+import { useLearningStore } from '@/stores/learning'
+const learning = useLearningStore()
 
 const route = useRoute()
 
@@ -84,6 +86,7 @@ watch(
     onCleanup(() => controller.abort())
 
     node.value = null
+    loading.value = false
     errorMessage.value = ''
 
     // 仅接受约定格式的 ID，避免把任意路由文本拼接为文件路径。
@@ -97,21 +100,18 @@ watch(
     try {
       // 先读取离线副本作为网络失败时的兜底，但在线时不能直接返回：
       // 否则部署新内容后，已访问过的节点会永远停留在旧版 Dexie 数据中。
-      const cachedNode = await getNode(id)
+      const cachedNode = await getNode(id).catch(() => undefined)
       if (controller.signal.aborted) return
-
-      if (!navigator.onLine && cachedNode) {
-        node.value = cachedNode
-        return
-      }
 
       try {
         // 带哈希的 JSON URL 会随内容变化，在线访问可可靠获得当前版本；
         // Service Worker 同时保留该响应，供后续完全离线使用。
         const remoteNode = await fetchNode(id, controller.signal)
-        await saveNode(remoteNode)
+        // 存储被禁用时仍能阅读，不能因保存失败退回过时题库。
+        await saveNode(remoteNode).catch(() => undefined)
         if (!controller.signal.aborted) node.value = remoteNode
       } catch (remoteError) {
+        if(controller.signal.aborted)return
         // 网络状态判断并非绝对可靠；请求失败时只要存在本地副本仍可阅读。
         if (cachedNode) {
           node.value = cachedNode
@@ -129,6 +129,9 @@ watch(
   },
   { immediate: true },
 )
+
+// 学习记录不可用时仍允许阅读，错误在工具页中可见。
+watch(node, value => { if (value) void learning.visit(value.id).catch(() => undefined) })
 </script>
 
 <template>

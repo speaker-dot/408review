@@ -4,13 +4,19 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "verify": "npm run content:validate && npm run test && npm run build",
+    "questions:refresh": "node scripts/apply-questions.mjs",
     "dev": "vite",
+    "prebuild": "node scripts/prepare-build.mjs",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "start:offline": "node scripts/serve-offline.mjs",
     "type-check": "vue-tsc --noEmit",
     "content:generate": "node scripts/generate-content.mjs",
-    "content:validate": "node scripts/validate-content.mjs"
+    "content:refresh": "node scripts/apply-editorial.mjs",
+    "content:validate": "node scripts/validate-content.mjs && node scripts/validate-papers.mjs"
   },
   "dependencies": {
     "dexie": "^4.0.8",
@@ -27,9 +33,13 @@
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^22.7.4",
     "@vitejs/plugin-vue": "^5.1.2",
+    "@vue/test-utils": "^2.4.6",
+    "fake-indexeddb": "^6.2.4",
+    "jsdom": "^25.0.1",
     "typescript": "~5.5.4",
     "vite": "^5.4.8",
     "vite-plugin-pwa": "^0.20.5",
+    "vitest": "^3.2.6",
     "vue-tsc": "^2.1.6"
   }
 }

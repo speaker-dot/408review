@@ -10,6 +10,8 @@ dev-dist/
 *.log
 .vite/
 .offline-package/
+.qa/
+coverage/
 
 # Editors and operating systems
 .idea/

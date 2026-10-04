@@ -33,7 +33,12 @@ jobs:
       - name: Validate knowledge content
         run: npm run content:validate
 
-      - name: Build PWA
+      - name: Run regression tests
+        # 自动部署前先回归学习记录、备份、考试和算法，避免只构建不测试。
+        # 不启用 Vitest UI/API 服务器。
+        run: npm run test
+
+      - name: Build PWA assets
         run: npm run build
         env:
           VITE_BASE_PATH: /${{ github.event.repository.name }}/

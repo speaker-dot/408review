@@ -1,25 +1,20 @@
 import { readFile, readdir } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
+import katex from 'katex'
 
 const projectRoot = fileURLToPath(new URL('..', import.meta.url))
 const contentRoot = path.join(projectRoot, 'src', 'content')
 const folders = { DS: 'ds', CS: 'cs', OS: 'os', NET: 'net' }
 const requiredHeadings = [
-  '### 先抓重点',
-  '### 核心定义',
-  '### 为什么需要它',
-  '### 数据结构与状态',
-  '### 解题步骤',
-  '### 关键公式',
-  '### 具体例子',
-  '### 必须记住的结论',
-  '### 408考情',
+  '### 复习时抓住这几条',
 ]
 const errors = []
 const records = new Map()
 const questionOwners = new Map()
 const counts = {}
+const catalog = JSON.parse(await readFile(path.join(contentRoot,'index.json'),'utf8'))
+const chapterIds = new Set(catalog.nodes.map(n=>n.parentId))
 const mathStats = {
   strings: 0,
   fieldsWithMath: 0,
@@ -44,6 +39,10 @@ function stripMarkdownCode(value) {
  */
 function validateMathString(value, label) {
   mathStats.strings += 1
+
+  // \frac、\bmod 等在生成脚本中若未正确保留反斜杠，会变成
+  // 换页符/退格符；即使肉眼难以察觉，也必须阻止其进入内容库。
+  assert(!/[\x00-\x09\x0B-\x1F]/.test(value), `${label}: 字符串含异常控制字符，请检查反斜杠转义`)
 
   const text = stripMarkdownCode(value)
   let outsideMath = ''
@@ -77,6 +76,14 @@ function validateMathString(value, label) {
     if (closingIndex < 0) {
       assert(false, `${label}: 数学公式分隔符 ${delimiter} 未闭合（位置 ${openingIndex}）`)
       return
+    }
+
+    try {
+      katex.renderToString(text.slice(openingIndex + delimiter.length, closingIndex), {
+        displayMode: isBlock, throwOnError: true, strict: 'ignore',
+      })
+    } catch (error) {
+      assert(false, `${label}: KaTeX 无法渲染：${error.message}`)
     }
 
     cursor = closingIndex + delimiter.length
@@ -136,6 +143,7 @@ for (const [category, folder] of Object.entries(folders)) {
       'details',
       'traps',
       'quizzes',
+      'study',
     ]
     assert(
       JSON.stringify(Object.keys(node)) === JSON.stringify(expectedKeys),
@@ -159,9 +167,20 @@ for (const [category, folder] of Object.entries(folders)) {
     for (const heading of requiredHeadings) {
       assert(node.details.includes(heading), `${label}: details 缺少 ${heading}`)
     }
-    assert(node.details.length >= 1200, `${label}: details 少于 1200 字符，讲解过短`)
-    assert(node.details.includes('$'), `${label}: details 缺少 LaTeX 数学表达式`)
-    assert(node.details.includes('|---|'), `${label}: details 缺少过程/公式表格`)
+    assert(node.details.length >= 350, `${label}: details 少于 350 字符`)
+    // 概念页不强塞公式和表格；检查具体教学证据，避免用重复段落凑字数。
+    for (const phrase of ['本步读了什么、改了什么', '围绕“', '不要把定义读成一整块', '先核对输入范围、表示方法、下标约定']) {
+      assert(!node.details.includes(phrase), `${label}: details 仍含旧版模板段落：${phrase}`)
+    }
+    assert(node.study?.keyPoints?.length >= 1, `${label}: 缺少具体记忆结论`)
+    assert(node.study?.recall?.length >= 1 && node.study.recall.every(item => item.question?.length >= 5 && item.answer?.length >= 5), `${label}: 回忆自测不完整`)
+    assert(node.study?.sources?.length >= 1, `${label}: 缺少教材/公开资料来源`)
+    for (const source of node.study?.sources ?? []) {
+      assert(typeof source.title === 'string' && source.title.length > 0 && typeof source.note === 'string', `${label}: 教材来源字段不完整`)
+      try {
+        assert(new URL(source.url).protocol === 'https:', `${label}: 来源链接不是 HTTPS`)
+      } catch { assert(false, `${label}: 教材来源链接无效`) }
+    }
     assert(!node.details.includes('课程中的一个考查单元'), `${label}: details 仍含旧版泛化定义`)
     if (node.parentId !== category) {
       assert(
@@ -185,14 +204,15 @@ for (const [category, folder] of Object.entries(folders)) {
       `${label}: traps 不合格`,
     )
     assert(
-      Array.isArray(node.quizzes) && node.quizzes.length >= 1 && node.quizzes.length <= 5,
-      `${label}: quizzes 应按考法精选 1-5 题`,
+      Array.isArray(node.quizzes) && node.quizzes.length >= (chapterIds.has(node.id)?0:1) && node.quizzes.length <= 5,
+      `${label}: 叶节点需针对性习题，章节页可不强塞习题`,
     )
 
     const quizzes = node.quizzes ?? []
     quizzes.forEach((quiz, index) => {
       assert(quiz?.id === `${node.id}-Q${String(index + 1).padStart(3, '0')}`, `${label}: 第 ${index + 1} 题 id 不正确`)
       assert(typeof quiz?.source?.label === 'string', `${label}: 第 ${index + 1} 题缺少来源`)
+      assert(!/某同学在处理|最终数值相同，中间状态/.test(JSON.stringify(quiz)),`${label}: 仍含万能习题模板`)
       assert(
         !questionOwners.has(quiz?.question),
         `${label}: 题干与 ${questionOwners.get(quiz?.question)} 完全重复`,
@@ -205,7 +225,7 @@ for (const [category, folder] of Object.entries(folders)) {
 
     const choices = quizzes.filter((quiz) => quiz.type === 'choice')
     const analyses = quizzes.filter((quiz) => quiz.type === 'analysis')
-    assert(choices.length >= 1 && choices.length <= 4, `${label}: 选择题应为 1-4 道精选题`)
+    assert(choices.length >= (chapterIds.has(node.id)?0:1) && choices.length <= 4, `${label}: 叶节点选择题应为 1-4 道精选题`)
     assert(analyses.length <= 1, `${label}: 同一节点不应强塞多道综合题`)
     for (const choice of choices) {
       assert(Array.isArray(choice.options) && choice.options.length === 4, `${label}/${choice.id}: 选项不是 4 个`)
@@ -242,6 +262,14 @@ for (const [id, record] of records) {
     index.links.some((link) => link.source === record.parentId && link.target === id),
     `${id}: 索引缺少父子边`,
   )
+  const children = [...records.values()].filter(item => item.parentId === id)
+  if (!children.length) {
+    assert(record.details.includes('### 跟着例题走一遍') && record.details.includes('**推导与答案**'), `${id}: 叶子知识点缺少完整例题`)
+  }
+  const references = JSON.stringify([record.details, record.study]).matchAll(/参见 ID:\s*((?:DS|CS|OS|NET)(?:-\d{2}){1,2}(?:-\d{3})?)/g)
+  for (const reference of references) {
+    assert(records.has(reference[1]), `${id}: 引用了不存在的节点 ${reference[1]}`)
+  }
 }
 
 for (const root of expectedRoots) {

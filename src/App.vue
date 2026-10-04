@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { useRegisterSW } from 'virtual:pwa-register/vue'
-import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { useLearningStore } from '@/stores/learning'
+const learning = useLearningStore()
+let updateInterval: number | undefined
 
 const isOnline = ref(navigator.onLine)
 const updateFailed = ref(false)
@@ -13,7 +16,7 @@ const { needRefresh, updateServiceWorker } = useRegisterSW({
   immediate: true,
   onRegisteredSW(_swUrl, registration) {
     if (!registration) return
-    window.setInterval(() => void registration.update(), 60 * 60 * 1000)
+    updateInterval = window.setInterval(() => void registration.update().catch(() => undefined), 60 * 60 * 1000)
   },
 })
 
@@ -26,20 +29,20 @@ async function applyUpdate(): Promise<void> {
   }
 }
 
-watch(needRefresh, (available) => {
-  if (available) void applyUpdate()
-})
+// 不再自动刷新：整卷考试或未保存笔记不能被新部署打断。
 
 function syncNetworkStatus(): void {
   isOnline.value = navigator.onLine
 }
 
 onMounted(() => {
+  void learning.initialize().catch(() => undefined)
   window.addEventListener('online', syncNetworkStatus)
   window.addEventListener('offline', syncNetworkStatus)
 })
 
 onBeforeUnmount(() => {
+  if (updateInterval) window.clearInterval(updateInterval)
   window.removeEventListener('online', syncNetworkStatus)
   window.removeEventListener('offline', syncNetworkStatus)
 })
@@ -48,8 +51,8 @@ onBeforeUnmount(() => {
 <template>
   <div class="app-shell">
     <aside v-if="needRefresh" class="update-banner" role="status">
-      <span>{{ updateFailed ? '自动更新失败，请手动重试。' : '发现新版本，正在更新…' }}</span>
-      <button v-if="updateFailed" type="button" @click="applyUpdate">立即更新</button>
+      <span>{{ updateFailed ? '更新失败，请重试。' : '新版本已就绪，完成作答或保存笔记后可更新。' }}</span>
+      <button type="button" @click="applyUpdate">更新并刷新</button>
     </aside>
 
     <header class="site-header">
@@ -63,12 +66,16 @@ onBeforeUnmount(() => {
 
       <nav class="site-nav" aria-label="主要导航">
         <RouterLink to="/">知识图谱</RouterLink>
+        <RouterLink to="/syllabus">408 大纲</RouterLink>
         <RouterLink to="/papers">考研真题与解析</RouterLink>
+        <RouterLink to="/study">我的复习</RouterLink>
+        <RouterLink to="/demos">推演实验</RouterLink>
+        <RouterLink to="/tools">离线与备份</RouterLink>
       </nav>
 
       <div class="network-pill" :class="{ offline: !isOnline }">
         <span class="network-dot" />
-        {{ isOnline ? '在线 · 内容已支持离线' : '离线模式' }}
+        {{ isOnline ? '网络已连接' : '网络已断开 · 读取本地' }}
       </div>
     </header>
 

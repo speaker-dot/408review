@@ -151,6 +151,7 @@ watch(() => paper.value?.year, () => void loadPaperState(), { immediate: true })
 <template>
   <main v-if="paper" class="reader-page">
     <RouterLink class="back-link" to="/papers">← 返回真题中心</RouterLink>
+    <RouterLink class="demo-link" :to="`/papers/${paper.year}/exam`">以整卷计时模式作答 →</RouterLink>
 
     <section class="reader-hero">
       <div>

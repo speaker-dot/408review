@@ -14,6 +14,8 @@ const mimeTypes = {
   '.html': 'text/html; charset=utf-8',
   '.ico': 'image/x-icon',
   '.js': 'text/javascript; charset=utf-8',
+  '.mjs': 'text/javascript; charset=utf-8',
+  '.pdf': 'application/pdf',
   '.json': 'application/json; charset=utf-8',
   '.map': 'application/json; charset=utf-8',
   '.png': 'image/png',
@@ -43,7 +45,8 @@ function resolveRequestPath(url = '/') {
 }
 
 const server = createServer(async (request, response) => {
-  let target = resolveRequestPath(request.url)
+  let target
+  try { target = resolveRequestPath(request.url) } catch { response.writeHead(400); response.end('Bad Request'); return }
   if (!target) {
     response.writeHead(403)
     response.end('Forbidden')
@@ -54,17 +57,17 @@ const server = createServer(async (request, response) => {
     const info = await stat(target)
     if (info.isDirectory()) target = path.join(target, 'index.html')
   } catch {
-    // Hash 路由通常不会抵达服务器；保留 index 回退便于未来切换路由模式。
-    target = path.join(distRoot, 'index.html')
+    // Hash 路由无需回退。丢失 worker/PDF 不能返回 HTML 假装成功。
+    response.writeHead(404); response.end('Not Found'); return
   }
 
   const extension = path.extname(target).toLowerCase()
   response.writeHead(200, {
     'Content-Type': mimeTypes[extension] ?? 'application/octet-stream',
-    'Cache-Control': extension === '.html' ? 'no-cache' : 'public, max-age=31536000, immutable',
+    'Cache-Control': /-[\w-]{8,}\./.test(path.basename(target)) ? 'public, max-age=31536000, immutable' : 'no-cache',
     'X-Content-Type-Options': 'nosniff',
   })
-  createReadStream(target).pipe(response)
+  createReadStream(target).on('error', () => response.destroy()).pipe(response)
 })
 
 server.listen(port, hostname, () => {

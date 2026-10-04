@@ -38,6 +38,22 @@ export interface ExamTrap {
   source?: QuizSource
 }
 
+/** 教材对照区的来源；短摘录和本站解释分开保存，避免混淆原文与改写。 */
+export interface StudySource {
+  title: string
+  url: string
+  note: string
+  quote?: string
+  translation?: string
+  locator?: string
+}
+
+export interface StudyGuide {
+  keyPoints: string[]
+  recall: { question: string; answer: string }[]
+  sources: StudySource[]
+}
+
 /** 单个知识点详情，是 Dexie 中 nodes 表的记录类型。 */
 export interface KnowledgeNode {
   /** 全局唯一 ID，例如 DS0101。 */
@@ -51,6 +67,8 @@ export interface KnowledgeNode {
   details: string
   traps: ExamTrap[]
   quizzes: Quiz[]
+  /** 可选以兼容离线数据库中尚未更新的旧知识点。 */
+  study?: StudyGuide
 }
 
 /** 首页导图索引中的轻量节点，不包含大段知识内容。 */
@@ -128,4 +146,73 @@ export interface PaperProgress {
   solutionPage: number
   completed: boolean
   updatedAt: number
+}
+
+/** 阅读进度与掌握程度分开：打开一页不等于掌握。 */
+export type StudyStatus = 'learning' | 'review' | 'mastered'
+export type ReviewRating = 'again' | 'hard' | 'good' | 'easy'
+export type ErrorKind = 'concept' | 'condition' | 'calculation' | 'procedure' | 'other'
+export interface StudyProgress {
+  nodeId: string
+  status: StudyStatus
+  visits: number
+  bookmarked: boolean
+  note: string
+  lastStudiedAt: number
+  lastReviewedAt: number
+  nextReviewAt: number
+  intervalDays: number
+  streak: number
+  /** 用户主动标记的掌握与间隔复习获得的证据不混淆。 */
+  manualMastery: boolean
+  updatedAt: number
+}
+export interface StudyAttempt {
+  id: string
+  nodeId: string
+  quizId: string
+  type: QuizType | 'recall'
+  quiz?: Quiz
+  selectedAnswer: string
+  correct: boolean
+  selfAssessed: boolean
+  errorKind?: ErrorKind
+  note: string
+  createdAt: number
+  updatedAt: number
+}
+export interface StudySettings {
+  id: 'preferences'
+  dailyReviewLimit: number
+  dailyNewLimit: number
+  updatedAt: number
+}
+export interface CorrectionFeedback {
+  id: string
+  nodeId: string
+  section: string
+  message: string
+  createdAt: number
+  updatedAt: number
+}
+export interface ExamSession {
+  id: string
+  year: number
+  status: 'running' | 'submitted'
+  startedAt: number
+  deadlineAt: number
+  submittedAt?: number
+  answers: Record<string, string>
+  analysisScores: Record<string, number>
+  /** 无完整已核对答案表时，由用户交卷后参考 PDF 录入。 */
+  referenceAnswers?: Record<string, string>
+  updatedAt: number
+}
+export interface ExamAnswerKey {
+  year: number
+  choices: string[]
+  analysis: { questionNo: number; maxScore: number }[]
+  solutionSha256: string
+  note: string
+  choiceSections?: { category: KnowledgeCategory; from: number; to: number }[]
 }

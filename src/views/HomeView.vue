@@ -6,6 +6,8 @@ import { useRouter } from 'vue-router'
 import MindMap from '@/components/MindMap.vue'
 import rawIndex from '@/content/index.json'
 import { useAppStore } from '@/stores/app'
+import { useLearningStore } from '@/stores/learning'
+import { demoIndex } from '@/learning/demoIndex'
 import type {
   KnowledgeCategory,
   MindMapIndex,
@@ -14,9 +16,12 @@ import type {
 
 const router = useRouter()
 const appStore = useAppStore()
+const learning = useLearningStore()
 const { selectedCategory } = storeToRefs(appStore)
 const searchQuery = ref('')
 const index = rawIndex as MindMapIndex
+const lastRead = computed(() => [...learning.progress].filter(item => item.visits > 0).sort((a, b) => b.lastStudiedAt - a.lastStudiedAt)[0])
+const lastReadName = computed(() => index.nodes.find(node => node.id === lastRead.value?.nodeId)?.name)
 
 const subjects: Array<{
   id: KnowledgeCategory
@@ -117,21 +122,27 @@ function openNode(nodeId: string): void {
   <main class="home-view">
     <section class="home-hero">
       <div class="hero-copy">
-        <span class="eyebrow">408 MINDMAP · OFFLINE FIRST</span>
-        <h1>把零散考点，<br /><em>连成一张图。</em></h1>
+        <span class="eyebrow">YOUR QUIET PLACE TO UNDERSTAND</span>
+        <h1>把知识连起来，<br /><em>把理解留下来。</em></h1>
         <p>
-          沿着知识关系理解四门专业课。点击节点进入考点详解，完成习题，并将内容保存在本地。
+          从一张图出发，把每个考点读懂、推演、练习、回忆。四门专业课，不再是互不相干的几本书。
         </p>
       </div>
 
       <div class="hero-stat" aria-label="知识库统计">
-        <strong>355</strong>
-        <span>结构化知识节点</span>
-        <div>
-          <small>4 门科目</small>
-          <small>按考法精选，不凑题数</small>
-        </div>
+        <span class="home-note-label">一间随身的复习室</span>
+        <strong>355<span>个考点</span></strong>
+        <p>读懂原理，也记得住它。</p>
+        <div><small>4 门科目</small><small>{{ demoIndex.length }} 个推演</small><small>本地优先</small></div>
+        <RouterLink v-if="lastRead" class="home-continue" :to="`/node/${lastRead.nodeId}`"><span>接着上次读</span><strong>{{ lastReadName || lastRead.nodeId }}</strong><i>↗</i></RouterLink>
+        <RouterLink v-else class="home-continue" to="/syllabus"><span>还不知道从哪里开始？</span><strong>先看 408 大纲与复习路线</strong><i>↗</i></RouterLink>
       </div>
+    </section>
+
+    <section class="home-shortcuts" aria-label="复习入口">
+      <RouterLink to="/study"><span class="shortcut-symbol">↺</span><div><small>RECALL & REVIEW</small><strong>把学过的再想一遍</strong><p>今日复习、错题与自己的笔记</p></div><span>→</span></RouterLink>
+      <RouterLink to="/demos"><span class="shortcut-symbol">↗</span><div><small>THINK IN STEPS</small><strong>亲手走一次过程</strong><p>{{ demoIndex.length }} 个四科实验，先预测再验证</p></div><span>→</span></RouterLink>
+      <RouterLink to="/syllabus"><span class="shortcut-symbol">≡</span><div><small>THE EXAM SCOPE</small><strong>对照考纲，知道学什么</strong><p>章纲、学习目标与知识点导航</p></div><span>→</span></RouterLink>
     </section>
 
     <section class="subject-grid" aria-label="选择科目">

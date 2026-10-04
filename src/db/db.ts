@@ -1,6 +1,6 @@
 import Dexie, { type EntityTable } from 'dexie'
 
-import type { KnowledgeNode, PaperProgress } from '@/types'
+import type { KnowledgeNode, PaperProgress, StudyProgress, StudyAttempt, StudySettings, CorrectionFeedback, ExamSession } from '@/types'
 
 /**
  * 408 MindMap 的浏览器本地数据库。
@@ -8,12 +8,17 @@ import type { KnowledgeNode, PaperProgress } from '@/types'
  * `id` 是主键；其余字段建立索引，便于后续按科目、父节点或难度查询。
  * 版本升级时应新增 `version(n)`，不要修改已经发布过的 schema 版本。
  */
-class Cs408Database extends Dexie {
+export class Cs408Database extends Dexie {
   nodes!: EntityTable<KnowledgeNode, 'id'>
   paperProgress!: EntityTable<PaperProgress, 'year'>
+  studyProgress!: EntityTable<StudyProgress, 'nodeId'>
+  attempts!: EntityTable<StudyAttempt, 'id'>
+  settings!: EntityTable<StudySettings, 'id'>
+  feedback!: EntityTable<CorrectionFeedback, 'id'>
+  examSessions!: EntityTable<ExamSession, 'id'>
 
-  constructor() {
-    super('cs408-mindmap')
+  constructor(name = 'cs408-mindmap') {
+    super(name)
 
     this.version(1).stores({
       nodes: 'id, category, parentId, difficulty',
@@ -35,6 +40,16 @@ class Cs408Database extends Dexie {
     this.version(3).stores({
       nodes: 'id, category, parentId, difficulty',
       paperProgress: 'year, updatedAt, completed',
+    })
+    // 只添加学习记录表，保留旧版所有知识缓存和真题阅读进度。
+    this.version(4).stores({
+      nodes: 'id, category, parentId, difficulty',
+      paperProgress: 'year, updatedAt, completed',
+      studyProgress: 'nodeId, status, nextReviewAt, updatedAt',
+      attempts: 'id, nodeId, quizId, createdAt, updatedAt',
+      settings: 'id',
+      feedback: 'id, nodeId, createdAt',
+      examSessions: 'id, year, status, updatedAt',
     })
   }
 }

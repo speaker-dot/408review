@@ -2,6 +2,10 @@
 import type { KnowledgeNode } from '@/types'
 import MarkdownContent from './MarkdownContent.vue'
 import QuizBox from './QuizBox.vue'
+import LearningPanel from './LearningPanel.vue'
+import RecallCheck from './RecallCheck.vue'
+import CorrectionForm from './CorrectionForm.vue'
+import { demosForNode } from '@/learning/demoIndex'
 
 const props = defineProps<{
   node: KnowledgeNode
@@ -39,8 +43,39 @@ const categoryNames = {
       <p>{{ node.summary }}</p>
     </header>
 
+    <LearningPanel :key="node.id" :node-id="node.id" />
+    <div v-if="demosForNode(node.id).length" class="node-lab-links">
+      <span>让知识动起来</span>
+      <RouterLink v-for="demo in demosForNode(node.id)" :key="demo.id" :to="`/demos?demo=${demo.id}`">{{ demo.title }} · 逐步推演 ↗</RouterLink>
+    </div>
+
     <section class="content-card details-card">
       <MarkdownContent :content="node.details" />
+    </section>
+
+    <section v-if="node.study" :key="`${node.id}-recall`" class="content-card recall-card">
+      <div class="study-heading">
+        <h2>合上讲解，试着回忆</h2>
+        <p>先用自己的话回答，再展开对照；答不上来的部分值得回读。</p>
+      </div>
+      <RecallCheck v-for="(item, index) in node.study.recall" :key="`${node.id}-${index}`" :node-id="node.id" :index="index" :question="item.question" :answer="item.answer" />
+    </section>
+
+    <section v-if="node.study" class="content-card reading-card">
+      <div class="study-heading">
+        <h2>教材与资料对照</h2>
+        <p>讲解和推导例题已保存在本站，离线也能阅读。下方原始资料链接需要联网。</p>
+      </div>
+      <article v-for="source in node.study.sources" :key="`${source.url}-${source.title}`" class="reading-source">
+        <a :href="source.url" target="_blank" rel="noopener noreferrer">{{ source.title }} ↗</a>
+        <p v-if="source.locator" class="source-locator">{{ source.locator }}</p>
+        <template v-if="source.quote">
+          <p class="excerpt-label">原文短摘</p>
+          <blockquote>{{ source.quote }}</blockquote>
+          <p v-if="source.translation">对照理解：{{ source.translation }}</p>
+        </template>
+        <p class="reading-note">{{ source.note }}</p>
+      </article>
     </section>
 
     <section class="content-card traps-card">
@@ -79,8 +114,7 @@ const categoryNames = {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {{ trap.source.label }}{{ trap.source.questionNo ? ` · ${trap.source.questionNo}` : '' }}
-            （{{ trap.source.adapted ? '改编' : '原题' }}）
+            延伸参考资料（旧版外链，未核对原题对应关系）↗
           </a>
           <span v-else-if="trap.source" class="source-link source-text">
             {{ trap.source.label }}（{{ trap.source.adapted ? '改编' : '原创' }}）
@@ -101,7 +135,55 @@ const categoryNames = {
         :key="quiz.id"
         :quiz="quiz"
         :index="index + 1"
+        :node-id="node.id"
       />
+      <p v-if="!node.quizzes.length" class="content-card learning-panel">此页用于章节梳理；请进入具体知识点进行针对性练习。整卷原题见“考研真题与解析”。</p>
     </section>
+    <CorrectionForm :key="`${node.id}-feedback`" :node-id="node.id" />
   </article>
 </template>
+
+<style scoped>
+.recall-card, .reading-card { padding: clamp(1.5rem, 4vw, 3rem); }
+.study-heading h2 {
+  margin: 0 0 0.6rem;
+  color: var(--ink);
+  font-size: 1.25rem;
+}
+.study-heading > p, .reading-note, .source-locator {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+.recall-question {
+  margin-top: 1rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+.recall-question summary {
+  cursor: pointer;
+  color: var(--blue);
+}
+.recall-question summary :deep(.markdown-content) {
+  display: inline;
+}
+.recall-question summary :deep(p) {
+  display: inline;
+}
+.recall-answer { padding: 0.9rem 0 0.2rem; }
+.reading-source + .reading-source {
+  border-top: 1px solid var(--line);
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+.reading-source > a { color: var(--blue); font-weight: 600; line-height: 1.7; }
+.reading-source blockquote {
+  margin: 0.5rem 0;
+  border-left: 3px solid var(--blue);
+  padding: 0.6rem 1rem;
+  background: #f5f7fc;
+  color: var(--ink);
+  line-height: 1.8;
+}
+.excerpt-label { margin-bottom: 0.25rem; color: var(--muted); font-size: 0.8rem; }
+</style>

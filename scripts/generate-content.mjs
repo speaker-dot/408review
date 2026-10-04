@@ -3,10 +3,15 @@ import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 
 import {
-  buildQuizSet,
   buildRichDetails,
   buildRichTraps,
 } from './content-v3.mjs'
+import { buildEditorialContent } from './editorial/index.mjs'
+import dsQuestions from './question-bank/ds.mjs'
+import csQuestions from './question-bank/cs.mjs'
+import osQuestions from './question-bank/os.mjs'
+import netQuestions from './question-bank/net.mjs'
+const questionBanks={DS:dsQuestions,CS:csQuestions,OS:osQuestions,NET:netQuestions}
 
 const projectRoot = fileURLToPath(new URL('..', import.meta.url))
 const contentRoot = path.join(projectRoot, 'src', 'content')
@@ -1732,7 +1737,8 @@ async function main() {
         subjectMeta[node.category].name,
       ),
       traps: buildRichTraps(node, profile),
-      quizzes: buildQuizSet(node, profile, buildAnalysis(node, profile)),
+      quizzes: questionBanks[node.category][node.id] ?? (()=>{throw new Error(`缺少独立题库：${node.id}`)})(),
+      ...buildEditorialContent(node, children),
     }
 
     const target = path.join(

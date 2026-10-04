@@ -41,6 +41,9 @@ function emitContentIndex(): Plugin {
 
 export default defineConfig({
   base,
+  server: { host: '127.0.0.1' },
+  preview: { host: '127.0.0.1' },
+  build: { emptyOutDir: true },
   plugins: [
     vue(),
     emitContentIndex(),
@@ -55,11 +58,14 @@ export default defineConfig({
         short_name: '408 MindMap',
         description: '基于知识图谱导航的 408 考研离线学习工具',
         lang: 'zh-CN',
-        theme_color: '#2563eb',
-        background_color: '#f8fafc',
+        theme_color: '#294d4c',
+        background_color: '#f7f7f2',
         display: 'standalone',
         start_url: base,
         scope: base,
+        icons: [
+          { src: 'app-icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any maskable' },
+        ],
       },
       workbox: {
         // 预缓存应用外壳、构建后的静态资源，以及 emitContentIndex 输出的索引。
@@ -71,7 +77,7 @@ export default defineConfig({
         cleanupOutdatedCaches: true,
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         clientsClaim: true,
-        skipWaiting: true,
+        skipWaiting: false,
         navigateFallback: `${base}index.html`,
         runtimeCaching: [
           {

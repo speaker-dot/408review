@@ -48,6 +48,7 @@ async function toggleOffline(paper: ExamPaper): Promise<void> {
 
   try {
     if (offlineYears.value.has(paper.year)) {
+      if (!window.confirm(`删除 ${paper.year} 年 PDF 离线副本？阅读与考试记录保留，可重新下载恢复。`)) return
       await removePaperOffline(paper)
     } else {
       await downloadPaperForOffline(paper, (completed, total) => {
@@ -64,7 +65,7 @@ async function toggleOffline(paper: ExamPaper): Promise<void> {
   }
 }
 
-onMounted(() => void refreshOfflineState())
+onMounted(() => void refreshOfflineState().catch(() => { errorMessage.value = '离线状态暂时无法读取，请重试。' }))
 </script>
 
 <template>
@@ -143,6 +144,7 @@ onMounted(() => void refreshOfflineState())
           </div>
 
           <div class="paper-actions">
+            <RouterLink class="secondary-action" :to="`/papers/${paper.year}/exam`">整卷计时自测</RouterLink>
             <RouterLink
               class="primary-action"
               :to="`/papers/${paper.year}`"
@@ -153,7 +155,7 @@ onMounted(() => void refreshOfflineState())
             <button
               type="button"
               class="secondary-action"
-              :disabled="activeDownload === paper.year"
+              :disabled="activeDownload !== undefined"
               @click="toggleOffline(paper)"
             >
               <template v-if="activeDownload === paper.year">

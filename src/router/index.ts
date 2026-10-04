@@ -4,6 +4,11 @@ const router = createRouter({
   // Hash 路由无需服务器配置回退规则，适合 GitHub Pages 和离线静态托管。
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
+    { path: '/syllabus', name: 'syllabus', component: () => import('@/views/SyllabusView.vue') },
+    { path: '/study', name: 'study', component: () => import('@/views/StudyView.vue') },
+    { path: '/tools', name: 'tools', component: () => import('@/views/ToolsView.vue') },
+    { path: '/demos', name: 'demos', component: () => import('@/views/DemosView.vue') },
+    { path: '/papers/:year/exam', name: 'exam', component: () => import('@/views/ExamView.vue') },
     {
       path: '/',
       name: 'home',

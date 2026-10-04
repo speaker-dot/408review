@@ -4,7 +4,7 @@ import {
   TooltipComponent,
   type TooltipComponentOption,
 } from 'echarts/components'
-import { init, use, type ComposeOption, type EChartsType } from 'echarts/core'
+import { format, init, use, type ComposeOption, type EChartsType } from 'echarts/core'
 import { CanvasRenderer } from 'echarts/renderers'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
@@ -233,7 +233,8 @@ const option = computed<MindMapOption>(() => ({
     formatter: (params) => {
       if (Array.isArray(params)) return ''
       const data = params.data as MindMapTreeNode
-      return `<strong>${data.name}</strong><br/><span style="opacity:.72">${data.id}</span>`
+      // 自定义 tooltip 是 HTML；文本必须转义，不能把标题中的标记当成代码。
+      return `<strong>${format.encodeHTML(data.name)}</strong><br/><span style="opacity:.72">${format.encodeHTML(data.id)}</span>`
     },
   },
   series: [

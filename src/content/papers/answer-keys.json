@@ -1,0 +1,557 @@
+{
+  "keys": [
+    {
+      "year": 2020,
+      "choices": [
+        "C",
+        "D",
+        "A",
+        "C",
+        "B",
+        "B",
+        "A",
+        "B",
+        "C",
+        "B",
+        "A",
+        "B",
+        "A",
+        "D",
+        "D",
+        "A",
+        "B",
+        "A",
+        "C",
+        "C",
+        "B",
+        "C",
+        "B",
+        "A",
+        "D",
+        "D",
+        "B",
+        "D",
+        "B",
+        "D",
+        "B",
+        "C",
+        "C",
+        "B",
+        "C",
+        "D",
+        "A",
+        "D",
+        "C",
+        "D"
+      ],
+      "analysis": [
+        {
+          "questionNo": 41,
+          "maxScore": 13
+        },
+        {
+          "questionNo": 42,
+          "maxScore": 10
+        },
+        {
+          "questionNo": 43,
+          "maxScore": 13
+        },
+        {
+          "questionNo": 44,
+          "maxScore": 10
+        },
+        {
+          "questionNo": 45,
+          "maxScore": 7
+        },
+        {
+          "questionNo": 46,
+          "maxScore": 8
+        },
+        {
+          "questionNo": 47,
+          "maxScore": 9
+        }
+      ],
+      "solutionSha256": "F85FE0C922F4F026A711885682F06F2F867A648D612219F629BD912103D02113",
+      "note": "选择题答案已逐项目视核对用户提供的参考解析 PDF 第 1 页，共 40 题；分析题分值逐项录自本地试卷 PDF 题头。参考解析为第三方资料，分析题由用户自评，不冒充官方评分标准。",
+      "choiceSections": [
+        {
+          "category": "DS",
+          "from": 1,
+          "to": 11
+        },
+        {
+          "category": "CS",
+          "from": 12,
+          "to": 22
+        },
+        {
+          "category": "OS",
+          "from": 23,
+          "to": 32
+        },
+        {
+          "category": "NET",
+          "from": 33,
+          "to": 40
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "choices": [
+        "D",
+        "D",
+        "B",
+        "C",
+        "B",
+        "D",
+        "A",
+        "C",
+        "A",
+        "C",
+        "B",
+        "D",
+        "D",
+        "A",
+        "C",
+        "A",
+        "D",
+        "C",
+        "C",
+        "A",
+        "B",
+        "A",
+        "B",
+        "B",
+        "C",
+        "C",
+        "D",
+        "C",
+        "B",
+        "A",
+        "C",
+        "C",
+        "B",
+        "A",
+        "B",
+        "B",
+        "D",
+        "B",
+        "D",
+        "C"
+      ],
+      "analysis": [
+        {
+          "questionNo": 41,
+          "maxScore": 15
+        },
+        {
+          "questionNo": 42,
+          "maxScore": 8
+        },
+        {
+          "questionNo": 43,
+          "maxScore": 15
+        },
+        {
+          "questionNo": 44,
+          "maxScore": 8
+        },
+        {
+          "questionNo": 45,
+          "maxScore": 7
+        },
+        {
+          "questionNo": 46,
+          "maxScore": 8
+        },
+        {
+          "questionNo": 47,
+          "maxScore": 9
+        }
+      ],
+      "solutionSha256": "45E4EB5D403D3A012AD7A2D38989E9A394D59294BE8B695BA473DF02E5504666",
+      "note": "选择题答案已逐项目视核对用户提供的参考解析 PDF 第 1 页，共 40 题；分析题分值逐项录自本地试卷 PDF 题头。参考解析为第三方资料，分析题由用户自评，不冒充官方评分标准。",
+      "choiceSections": [
+        {
+          "category": "DS",
+          "from": 1,
+          "to": 11
+        },
+        {
+          "category": "CS",
+          "from": 12,
+          "to": 22
+        },
+        {
+          "category": "OS",
+          "from": 23,
+          "to": 32
+        },
+        {
+          "category": "NET",
+          "from": 33,
+          "to": 40
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "choices": [
+        "B",
+        "D",
+        "B",
+        "C",
+        "D",
+        "D",
+        "B",
+        "D",
+        "D",
+        "A",
+        "D",
+        "A",
+        "B",
+        "A",
+        "C",
+        "A",
+        "C",
+        "B",
+        "D",
+        "A",
+        "C",
+        "C",
+        "D",
+        "A",
+        "C",
+        "B",
+        "C",
+        "D",
+        "A",
+        "D",
+        "B",
+        "A",
+        "B",
+        "C",
+        "B",
+        "D",
+        "B",
+        "C",
+        "D",
+        "B"
+      ],
+      "analysis": [
+        {
+          "questionNo": 41,
+          "maxScore": 13
+        },
+        {
+          "questionNo": 42,
+          "maxScore": 10
+        },
+        {
+          "questionNo": 43,
+          "maxScore": 15
+        },
+        {
+          "questionNo": 44,
+          "maxScore": 8
+        },
+        {
+          "questionNo": 45,
+          "maxScore": 7
+        },
+        {
+          "questionNo": 46,
+          "maxScore": 8
+        },
+        {
+          "questionNo": 47,
+          "maxScore": 9
+        }
+      ],
+      "solutionSha256": "1C4A11BEC6A5E8B20A3BA292ADAE6989A23298A750C11F618370040DF333A877",
+      "note": "选择题答案已逐项目视核对用户提供的参考解析 PDF 第 1 页，共 40 题；分析题分值逐项录自本地试卷 PDF 题头。参考解析为第三方资料，分析题由用户自评，不冒充官方评分标准。",
+      "choiceSections": [
+        {
+          "category": "DS",
+          "from": 1,
+          "to": 11
+        },
+        {
+          "category": "CS",
+          "from": 12,
+          "to": 22
+        },
+        {
+          "category": "OS",
+          "from": 23,
+          "to": 32
+        },
+        {
+          "category": "NET",
+          "from": 33,
+          "to": 40
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "choices": [
+        "D",
+        "C",
+        "A",
+        "B",
+        "A",
+        "B",
+        "B",
+        "B",
+        "C",
+        "C",
+        "D",
+        "C",
+        "A",
+        "A",
+        "C",
+        "B",
+        "A",
+        "B",
+        "C",
+        "D",
+        "D",
+        "C",
+        "D",
+        "A",
+        "C",
+        "D",
+        "C",
+        "D",
+        "B",
+        "C",
+        "B",
+        "D",
+        "D",
+        "C",
+        "B",
+        "C",
+        "D",
+        "A",
+        "B",
+        "D"
+      ],
+      "analysis": [
+        {
+          "questionNo": 41,
+          "maxScore": 13
+        },
+        {
+          "questionNo": 42,
+          "maxScore": 10
+        },
+        {
+          "questionNo": 43,
+          "maxScore": 14
+        },
+        {
+          "questionNo": 44,
+          "maxScore": 9
+        },
+        {
+          "questionNo": 45,
+          "maxScore": 7
+        },
+        {
+          "questionNo": 46,
+          "maxScore": 8
+        },
+        {
+          "questionNo": 47,
+          "maxScore": 9
+        }
+      ],
+      "solutionSha256": "CC99D1005E1A330F558912B710EEDED2698B04EF978302CF7BAF70E3E389F493",
+      "note": "选择题答案已逐项目视核对用户提供的参考解析 PDF 第 1 页，共 40 题；分析题分值逐项录自本地试卷 PDF 题头。参考解析为第三方资料，分析题由用户自评，不冒充官方评分标准。",
+      "choiceSections": [
+        {
+          "category": "DS",
+          "from": 1,
+          "to": 11
+        },
+        {
+          "category": "CS",
+          "from": 12,
+          "to": 22
+        },
+        {
+          "category": "OS",
+          "from": 23,
+          "to": 32
+        },
+        {
+          "category": "NET",
+          "from": 33,
+          "to": 40
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "choices": [
+        "D",
+        "A",
+        "A",
+        "B",
+        "D",
+        "A",
+        "D",
+        "A",
+        "B",
+        "C",
+        "D",
+        "B",
+        "B",
+        "C",
+        "D",
+        "D",
+        "C",
+        "B",
+        "C",
+        "B",
+        "A",
+        "C",
+        "A",
+        "A",
+        "D",
+        "A",
+        "A",
+        "B",
+        "A",
+        "C",
+        "C",
+        "C",
+        "B",
+        "C",
+        "D",
+        "B",
+        "D",
+        "D",
+        "C",
+        "D"
+      ],
+      "analysis": [
+        {
+          "questionNo": 41,
+          "maxScore": 13
+        },
+        {
+          "questionNo": 42,
+          "maxScore": 10
+        },
+        {
+          "questionNo": 43,
+          "maxScore": 13
+        },
+        {
+          "questionNo": 44,
+          "maxScore": 10
+        },
+        {
+          "questionNo": 45,
+          "maxScore": 7
+        },
+        {
+          "questionNo": 46,
+          "maxScore": 8
+        },
+        {
+          "questionNo": 47,
+          "maxScore": 9
+        }
+      ],
+      "solutionSha256": "7ED01E612EE53EB3D99D22C3D2A54470462E381A24CE6A1E57BBF083820700A9",
+      "note": "选择题答案已逐项目视核对用户提供的参考解析 PDF 第 1 页，共 40 题；分析题分值逐项录自本地试卷 PDF 题头。参考解析为第三方资料，分析题由用户自评，不冒充官方评分标准。",
+      "choiceSections": [
+        {
+          "category": "DS",
+          "from": 1,
+          "to": 11
+        },
+        {
+          "category": "CS",
+          "from": 12,
+          "to": 22
+        },
+        {
+          "category": "OS",
+          "from": 23,
+          "to": 32
+        },
+        {
+          "category": "NET",
+          "from": 33,
+          "to": 40
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "choices": [],
+      "analysis": [
+        {
+          "questionNo": 41,
+          "maxScore": 13
+        },
+        {
+          "questionNo": 42,
+          "maxScore": 10
+        },
+        {
+          "questionNo": 43,
+          "maxScore": 12
+        },
+        {
+          "questionNo": 44,
+          "maxScore": 9
+        },
+        {
+          "questionNo": 45,
+          "maxScore": 8
+        },
+        {
+          "questionNo": 46,
+          "maxScore": 9
+        },
+        {
+          "questionNo": 47,
+          "maxScore": 9
+        }
+      ],
+      "solutionSha256": "087EEBE73DBB8457F579DA9FBAAEDAAE0B50F7632B25A364498EEBC1EFDC5314",
+      "note": "提供的解析含缺失/回忆题干，且部分题干与选项顺序不同于本地试卷；未建立完整可核验选择题答案表，不自动猜测。分析题分值逐项核对本地试卷 PDF 的题头，依次为 13、10、12、9、8、9、9 分；与部分外部版本存在差异，仅用于本地试卷练习自评，不冒充官方评分标准。",
+      "choiceSections": [
+        {
+          "category": "DS",
+          "from": 1,
+          "to": 11
+        },
+        {
+          "category": "CS",
+          "from": 12,
+          "to": 22
+        },
+        {
+          "category": "OS",
+          "from": 23,
+          "to": 32
+        },
+        {
+          "category": "NET",
+          "from": 33,
+          "to": 40
+        }
+      ]
+    }
+  ]
+}
