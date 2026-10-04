@@ -1,3 +1,6 @@
+// @vitest-environment node
+// Cache Storage 是服务层测试，不依赖 DOM。让 Response 与 Web Crypto 使用同一个
+// Node realm，避免 jsdom 的 ArrayBuffer 在 Node 20 原生 digest 中被错误拒绝。
 import { beforeEach,afterEach,describe,it,expect,vi } from 'vitest'
 import { downloadPaperForOffline,isPaperAvailableOffline,validatePaperResponse,removePaperOffline } from '@/services/paperCache'
 import type { ExamPaper } from '@/types'
@@ -8,9 +11,11 @@ const cache={match:vi.fn(async(k:string)=>items.get(k)?.clone()),put:vi.fn(async
 beforeEach(async()=>{
   items.clear();const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',buffer))].map(x=>x.toString(16).padStart(2,'0')).join('')
   const asset={label:'test',url:'papers/2024/paper.pdf',pages:1,bytes:bytes.length,sha256:hash};paper={year:2024,paper:asset,solution:{...asset,url:'papers/2024/solution.pdf'}} as ExamPaper
-  vi.stubGlobal('caches',{open:vi.fn(async()=>cache)});vi.stubGlobal('fetch',vi.fn(async()=>new Response(bytes)))
+  const cacheStorage={open:vi.fn(async()=>cache)}
+  vi.stubGlobal('window',{caches:cacheStorage})
+  vi.stubGlobal('caches',cacheStorage);vi.stubGlobal('fetch',vi.fn(async()=>new Response(bytes)))
 })
-afterEach(()=>{vi.restoreAllMocks();cache.match.mockClear();cache.put.mockClear();cache.delete.mockClear()})
+afterEach(()=>{vi.restoreAllMocks();vi.unstubAllGlobals();cache.match.mockClear();cache.put.mockClear();cache.delete.mockClear()})
 describe('verified PDF caching',()=>{
   it('validates a real PDF header, length and hash',async()=>{const result=await validatePaperResponse(new Response(bytes),paper.paper);expect(result.headers.get('X-408-Verified')).toBe(paper.paper.sha256);expect(result.headers.get('Content-Type')).toBe('application/pdf')})
   it('rejects HTTP errors, HTML fallback, truncated data and wrong hashes',async()=>{
